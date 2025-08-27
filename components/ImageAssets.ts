@@ -6,7 +6,7 @@
 export const profilePic = './images/profilepic.jpg';
 
 // About Section
-export const aboutMeImage = 'https://placehold.co/450x550/0b293e/ffffff?text=About+Me';
+export const aboutMeImage = './images/profilepic.jpg';
 
 // Portfolio Section
 export const portfolioImages = {
