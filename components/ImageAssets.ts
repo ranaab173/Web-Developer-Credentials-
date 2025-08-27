@@ -3,7 +3,7 @@
 // For now, we are using placeholders.
 
 // Hero Section
-export const profilePic = './images/profilepic.jpg';
+export const profilePic = 'images/profilepic.jpg';
 
 // About Section
 export const aboutMeImage = '/images/profilepic.jpg';
