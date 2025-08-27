@@ -1,4 +1,5 @@
 import React from 'react';
+import { portfolioImages } from './ImageAssets';
 
 const portfolioItems = [
   { 
@@ -7,7 +8,7 @@ const portfolioItems = [
     category: 'Web App', 
     description: 'A full-featured e-commerce site with product catalogs, shopping cart, and payment integration.',
     skills: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    imgSeed: 'project1'
+    imgSrc: portfolioImages.project1
   },
   { 
     id: 2, 
@@ -15,7 +16,7 @@ const portfolioItems = [
     category: 'Mobile App', 
     description: 'A cross-platform mobile app to help teams organize and track their work efficiently.',
     skills: ['React Native', 'Firebase', 'Redux'],
-    imgSeed: 'project2'
+    imgSrc: portfolioImages.project2
   },
   { 
     id: 3, 
@@ -23,7 +24,7 @@ const portfolioItems = [
     category: 'Web Design',
     description: 'A modern and responsive website for a corporate client, focusing on brand identity.',
     skills: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
-    imgSeed: 'project3'
+    imgSrc: portfolioImages.project3
   },
   { 
     id: 4, 
@@ -31,7 +32,7 @@ const portfolioItems = [
     category: 'Web App', 
     description: 'A dashboard for visualizing complex datasets with interactive charts and graphs.',
     skills: ['React', 'D3.js', 'Express', 'PostgreSQL'],
-    imgSeed: 'project4'
+    imgSrc: portfolioImages.project4
   },
   { 
     id: 5, 
@@ -39,7 +40,7 @@ const portfolioItems = [
     category: 'API Development',
     description: 'An API that aggregates content from multiple social media platforms into a single feed.',
     skills: ['Node.js', 'OAuth', 'REST API', 'Docker'],
-    imgSeed: 'project5'
+    imgSrc: portfolioImages.project5
   },
   { 
     id: 6, 
@@ -47,14 +48,14 @@ const portfolioItems = [
     category: 'Web App', 
     description: 'A reservation system for a local business, enabling customers to book appointments online.',
     skills: ['React', 'Python', 'Django', 'PostgreSQL'],
-    imgSeed: 'project6'
+    imgSrc: portfolioImages.project6
   },
 ];
 
 const PortfolioItem: React.FC<{ item: typeof portfolioItems[0] }> = ({ item }) => {
   return (
     <div className="flex-shrink-0 w-[350px] mx-4 bg-[#0b293e] rounded-lg overflow-hidden border border-gray-700/50 shadow-lg transform transition-transform duration-300 hover:-translate-y-2">
-      <img src={`https://picsum.photos/seed/${item.imgSeed}/600/400`} alt={item.title} className="w-full h-48 object-cover" />
+      <img src={item.imgSrc} alt={item.title} className="w-full h-48 object-cover" />
       <div className="p-6">
         <p className="text-sm text-[#00abf0] font-semibold mb-1">{item.category}</p>
         <h3 className="text-2xl font-bold text-white mb-2">{item.title}</h3>

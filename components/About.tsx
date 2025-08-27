@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { aboutMeImage } from './ImageAssets';
 
 type Tab = 'skills' | 'experience' | 'education';
 
@@ -38,7 +39,7 @@ const About: React.FC = () => {
     <section id="about" className="py-20 bg-[#0b293e]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
         <div className="md:w-1/3 flex justify-center" data-animate="fade-in-right">
-            <img src="https://picsum.photos/seed/portfolio-about/400/500" alt="About Me" className="rounded-lg w-full max-w-sm shadow-lg shadow-[#00abf0]/20" />
+            <img src={aboutMeImage} alt="About Me" className="rounded-lg w-full max-w-sm shadow-lg shadow-[#00abf0]/20" />
         </div>
         <div className="md:w-2/3" data-animate="fade-in-left">
           <h2 className="text-4xl font-bold mb-2 text-center md:text-left">About <span className="text-[#00abf0]">Me</span></h2>

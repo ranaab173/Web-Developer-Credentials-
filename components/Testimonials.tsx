@@ -1,4 +1,5 @@
 import React from 'react';
+import { testimonialAvatars } from './ImageAssets';
 
 const testimonialsData = [
   {
@@ -6,21 +7,21 @@ const testimonialsData = [
     title: 'CEO, TechCorp',
     quote: 'Working with them was a game-changer for our business. The final product exceeded all our expectations, and the process was incredibly smooth. Highly recommended!',
     rating: 5,
-    imgSeed: 'woman1'
+    imgSrc: testimonialAvatars.client1
   },
   {
     name: 'John Smith',
     title: 'Marketing Director, Innovate Ltd.',
     quote: 'An absolute professional. Their attention to detail and creative solutions helped elevate our brand online. The website they built is both beautiful and highly functional.',
     rating: 5,
-    imgSeed: 'man1'
+    imgSrc: testimonialAvatars.client2
   },
   {
     name: 'Emily White',
     title: 'Founder, Creative Solutions',
     quote: 'I was impressed by their technical expertise and ability to understand my vision. They delivered a top-quality application on time and on budget. A pleasure to work with.',
     rating: 5,
-    imgSeed: 'woman2'
+    imgSrc: testimonialAvatars.client3
   },
 ];
 
@@ -45,7 +46,7 @@ const Testimonials: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonialsData.map((testimonial, index) => (
              <div key={index} className="bg-[#081b29] p-8 rounded-lg border border-gray-700/50 flex flex-col items-center text-center transform transition-all duration-300 hover:-translate-y-2 hover:border-[#00abf0]">
-                <img src={`https://i.pravatar.cc/100?u=${testimonial.imgSeed}`} alt={testimonial.name} className="w-24 h-24 rounded-full border-4 border-[#00abf0] mb-4"/>
+                <img src={testimonial.imgSrc} alt={testimonial.name} className="w-24 h-24 rounded-full border-4 border-[#00abf0] mb-4"/>
                 <h3 className="text-xl font-bold">{testimonial.name}</h3>
                 <p className="text-gray-400 mb-2">{testimonial.title}</p>
                 <StarRating rating={testimonial.rating} />
