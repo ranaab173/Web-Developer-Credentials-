@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 type Tab = 'skills' | 'experience' | 'education';
@@ -38,10 +37,10 @@ const About: React.FC = () => {
   return (
     <section id="about" className="py-20 bg-[#0b293e]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
-        <div className="md:w-1/3 flex justify-center">
+        <div className="md:w-1/3 flex justify-center" data-animate="fade-in-right">
             <img src="https://picsum.photos/seed/portfolio-about/400/500" alt="About Me" className="rounded-lg w-full max-w-sm shadow-lg shadow-[#00abf0]/20" />
         </div>
-        <div className="md:w-2/3">
+        <div className="md:w-2/3" data-animate="fade-in-left">
           <h2 className="text-4xl font-bold mb-2 text-center md:text-left">About <span className="text-[#00abf0]">Me</span></h2>
           <h3 className="text-2xl font-semibold mb-4 text-center md:text-left">Full-stack Developer!</h3>
           <p className="text-gray-300 leading-relaxed mb-6">
@@ -54,7 +53,7 @@ const About: React.FC = () => {
             <TabButton active={activeTab === 'education'} onClick={() => setActiveTab('education')}>Education</TabButton>
           </div>
 
-          <div className="tab-content">
+          <div className="tab-content min-h-[220px]">
             {activeTab === 'skills' && (
               <div>
                 {skills.map((skillCat, index) => (

@@ -1,23 +1,34 @@
-
 import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
-import Services from './components/Services';
+import Pricing from './components/Pricing';
 import Portfolio from './components/Portfolio';
+import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
   return (
-    <div className="bg-[#081b29] text-white font-sans">
+    <div className="bg-[#081b29] text-white font-sans overflow-x-hidden">
       <Header />
       <main>
         <Hero />
-        <About />
-        <Services />
-        <Portfolio />
-        <Contact />
+        <div data-animate="fade-in-up">
+          <About />
+        </div>
+        <div data-animate="fade-in-up">
+          <Pricing />
+        </div>
+        <div data-animate="fade-in-up">
+          <Portfolio />
+        </div>
+        <div data-animate="fade-in-up">
+          <Testimonials />
+        </div>
+        <div data-animate="fade-in-up">
+          <Contact />
+        </div>
       </main>
       <Footer />
     </div>

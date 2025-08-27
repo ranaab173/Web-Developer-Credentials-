@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const Contact: React.FC = () => {
@@ -8,7 +7,7 @@ const Contact: React.FC = () => {
         <h2 className="text-4xl font-bold text-center mb-12">Contact <span className="text-[#00abf0]">Me</span></h2>
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Contact Info */}
-          <div className="lg:w-1/3">
+          <div className="lg:w-1/3" data-animate="fade-in-right">
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#0b293e] text-[#00abf0]">
@@ -16,7 +15,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg">Email</h4>
-                  <p className="text-gray-400">aamir.malik@example.com</p>
+                  <p className="text-gray-400">rana.abubakar@example.com</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
@@ -25,7 +24,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg">Phone</h4>
-                  <p className="text-gray-400">+1 234 567 890</p>
+                  <p className="text-gray-400">+92 300 1234567</p>
                 </div>
               </div>
             </div>
@@ -42,7 +41,7 @@ const Contact: React.FC = () => {
             </a>
           </div>
           {/* Contact Form */}
-          <div className="lg:w-2/3">
+          <div className="lg:w-2/3" data-animate="fade-in-left">
             <form action="#" className="space-y-6">
               <div>
                 <input type="text" placeholder="Your Name" className="w-full bg-[#0b293e] border border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#00abf0]" />

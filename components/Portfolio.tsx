@@ -1,44 +1,91 @@
-
 import React from 'react';
 
 const portfolioItems = [
-  { id: 1, title: 'Project One', category: 'Web App' },
-  { id: 2, title: 'Project Two', category: 'Mobile App' },
-  { id: 3, title: 'Project Three', category: 'Web Design' },
-  { id: 4, title: 'Project Four', category: 'API Development' },
-  { id: 5, title: 'Project Five', category: 'E-commerce Site' },
-  { id: 6, title: 'Project Six', category: 'Portfolio Website' },
+  { 
+    id: 1, 
+    title: 'E-commerce Platform', 
+    category: 'Web App', 
+    description: 'A full-featured e-commerce site with product catalogs, shopping cart, and payment integration.',
+    skills: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+    imgSeed: 'project1'
+  },
+  { 
+    id: 2, 
+    title: 'Task Management App', 
+    category: 'Mobile App', 
+    description: 'A cross-platform mobile app to help teams organize and track their work efficiently.',
+    skills: ['React Native', 'Firebase', 'Redux'],
+    imgSeed: 'project2'
+  },
+  { 
+    id: 3, 
+    title: 'Corporate Website', 
+    category: 'Web Design',
+    description: 'A modern and responsive website for a corporate client, focusing on brand identity.',
+    skills: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
+    imgSeed: 'project3'
+  },
+  { 
+    id: 4, 
+    title: 'Data Analytics Dashboard', 
+    category: 'Web App', 
+    description: 'A dashboard for visualizing complex datasets with interactive charts and graphs.',
+    skills: ['React', 'D3.js', 'Express', 'PostgreSQL'],
+    imgSeed: 'project4'
+  },
+  { 
+    id: 5, 
+    title: 'Social Media Aggregator', 
+    category: 'API Development',
+    description: 'An API that aggregates content from multiple social media platforms into a single feed.',
+    skills: ['Node.js', 'OAuth', 'REST API', 'Docker'],
+    imgSeed: 'project5'
+  },
+  { 
+    id: 6, 
+    title: 'Booking System', 
+    category: 'Web App', 
+    description: 'A reservation system for a local business, enabling customers to book appointments online.',
+    skills: ['React', 'Python', 'Django', 'PostgreSQL'],
+    imgSeed: 'project6'
+  },
 ];
 
-const PortfolioItem: React.FC<{ item: { id: number; title: string; category: string } }> = ({ item }) => {
+const PortfolioItem: React.FC<{ item: typeof portfolioItems[0] }> = ({ item }) => {
   return (
-    <div className="relative group rounded-lg overflow-hidden">
-      <img src={`https://picsum.photos/seed/project${item.id}/600/400`} alt={item.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#081b29] via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity duration-300"></div>
-      <div className="absolute inset-0 flex flex-col justify-end items-center text-center p-6 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+    <div className="flex-shrink-0 w-[350px] mx-4 bg-[#0b293e] rounded-lg overflow-hidden border border-gray-700/50 shadow-lg transform transition-transform duration-300 hover:-translate-y-2">
+      <img src={`https://picsum.photos/seed/${item.imgSeed}/600/400`} alt={item.title} className="w-full h-48 object-cover" />
+      <div className="p-6">
+        <p className="text-sm text-[#00abf0] font-semibold mb-1">{item.category}</p>
         <h3 className="text-2xl font-bold text-white mb-2">{item.title}</h3>
-        <p className="text-gray-300 mb-4">{item.category}</p>
-        <a href="#" className="w-12 h-12 bg-[#00abf0] rounded-full flex items-center justify-center text-[#081b29] hover:bg-white transition-colors duration-300">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-          </svg>
-        </a>
+        <p className="text-gray-400 mb-4 h-20 overflow-hidden">{item.description}</p>
+        <div className="flex flex-wrap gap-2">
+            {item.skills.map(skill => (
+                <span key={skill} className="bg-[#081b29] text-gray-300 text-xs font-medium px-2.5 py-1 rounded-full">{skill}</span>
+            ))}
+        </div>
       </div>
     </div>
   );
 };
 
 const Portfolio: React.FC = () => {
+  const duplicatedItems = [...portfolioItems, ...portfolioItems];
+
   return (
-    <section id="portfolio" className="py-20 bg-[#0b293e]">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="portfolio" className="py-20 bg-[#081b29]">
+      <div className="container mx-auto">
         <h2 className="text-4xl font-bold text-center mb-4">My <span className="text-[#00abf0]">Portfolio</span></h2>
         <p className="text-center text-lg text-gray-300 mb-12">My Latest Work</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {portfolioItems.map((item) => (
-            <PortfolioItem key={item.id} item={item} />
+      </div>
+      <div className="portfolio-carousel w-full overflow-hidden relative">
+         <div className="carousel-track">
+          {duplicatedItems.map((item, index) => (
+            <PortfolioItem key={index} item={item} />
           ))}
         </div>
+        <div className="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-[#081b29] to-transparent"></div>
+        <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-[#081b29] to-transparent"></div>
       </div>
     </section>
   );
