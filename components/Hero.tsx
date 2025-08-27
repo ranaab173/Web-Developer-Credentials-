@@ -1,0 +1,68 @@
+
+import React, { useState, useEffect } from 'react';
+
+const roles = ["Full Stack Developer", "Software Engineer"];
+
+const Hero: React.FC = () => {
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [currentRole, setCurrentRole] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+
+  useEffect(() => {
+    const handleTyping = () => {
+      const fullRole = roles[roleIndex];
+      setCurrentRole(
+        isDeleting
+          ? fullRole.substring(0, currentRole.length - 1)
+          : fullRole.substring(0, currentRole.length + 1)
+      );
+
+      setTypingSpeed(isDeleting ? 100 : 150);
+
+      if (!isDeleting && currentRole === fullRole) {
+        setTimeout(() => setIsDeleting(true), 2000);
+      } else if (isDeleting && currentRole === "") {
+        setIsDeleting(false);
+        setRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
+      }
+    };
+    const timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [currentRole, isDeleting, roleIndex, typingSpeed]);
+
+  return (
+    <section id="home" className="min-h-screen flex items-center bg-[#081b29]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center justify-between">
+        <div className="md:w-1/2 mt-10 md:mt-0 text-center md:text-left">
+          <h3 className="text-3xl font-bold">Hello, I'm</h3>
+          <h1 className="text-5xl md:text-6xl font-extrabold my-3">Muhammad Aamir Malik</h1>
+          <h3 className="text-3xl font-bold text-[#00abf0]">
+            And I'm a <span className="border-r-2 border-[#00abf0]">{currentRole}</span>
+          </h3>
+          <p className="my-6 text-gray-300 leading-relaxed max-w-xl mx-auto md:mx-0">
+            I'm a passionate developer with experience in building web applications with modern technologies. I love solving complex problems and learning new skills.
+          </p>
+          <div className="flex justify-center md:justify-start space-x-4 my-6">
+            <a href="#" className="w-10 h-10 border-2 border-[#00abf0] rounded-full flex items-center justify-center text-[#00abf0] hover:bg-[#00abf0] hover:text-[#081b29] transition-all duration-300">
+              <svg fill="currentColor" className="w-5 h-5" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.327 0-1.937.724-2.25 1.284h.016v-1.123H7.645v7.225h2.406z"/></svg>
+            </a>
+            <a href="#" className="w-10 h-10 border-2 border-[#00abf0] rounded-full flex items-center justify-center text-[#00abf0] hover:bg-[#00abf0] hover:text-[#081b29] transition-all duration-300">
+              <svg fill="currentColor" className="w-5 h-5" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+            </a>
+          </div>
+          <a href="#" className="inline-block px-8 py-3 bg-[#00abf0] text-[#081b29] rounded-full font-semibold hover:bg-opacity-80 transition-all duration-300 shadow-[0_0_10px_#00abf0]">
+            Download CV
+          </a>
+        </div>
+        <div className="md:w-1/2 flex justify-center">
+          <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-8 border-[#00abf0] shadow-[0_0_20px_#00abf0]">
+            <img src="https://picsum.photos/seed/portfolio-person/400/400" alt="Muhammad Aamir Malik" className="w-full h-full object-cover" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;
