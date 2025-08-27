@@ -6,7 +6,7 @@
 export const profilePic = './images/profilepic.jpg';
 
 // About Section
-export const aboutMeImage = './images/profilepic.jpg';
+export const aboutMeImage = '/images/profilepic.jpg';
 
 // Portfolio Section
 export const portfolioImages = {
