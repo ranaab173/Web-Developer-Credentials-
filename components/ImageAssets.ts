@@ -7,7 +7,7 @@
 // containing all the necessary image files.
 
 // Hero Section
-export const profilePic = '/images/profilepic.jpg';
+export const profilePic = 'https://images.unsplash.com/photo-1755719985500-b6049b2ecb1f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
 // About Section
 export const aboutMeImage = './images/about-me.jpg';
