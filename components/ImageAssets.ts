@@ -15,7 +15,7 @@ export const aboutMeImage = './images/about-me.jpg';
 // Portfolio Section
 export const portfolioImages = {
   project1: '../images/about-me.jpg',
-  project2: '/images/project2.jpg',
+  project2: '/images/profilepic.jpg',
   project3: '/images/project3.jpg',
   project4: '/images/project4.jpg',
   project5: '/images/project5.jpg',
