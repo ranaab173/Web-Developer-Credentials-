@@ -1,25 +1,26 @@
 // All image paths are centralized here for easy management.
-// Create an 'images' folder in your project's public directory and place your images there.
+// To use your own images, create an 'images' folder in your project and update these paths.
+// For now, we are using placeholders.
 
 // Hero Section
-export const profilePic = 'images/profile-pic.jpg';
+export const profilePic = 'https://placehold.co/400x400/00abf0/081b29?text=Profile\\nPic';
 
 // About Section
-export const aboutMeImage = 'images/about-me.jpg';
+export const aboutMeImage = 'https://placehold.co/450x550/0b293e/ffffff?text=About+Me';
 
 // Portfolio Section
 export const portfolioImages = {
-  project1: 'images/portfolio/project1.jpg',
-  project2: 'images/portfolio/project2.jpg',
-  project3: 'images/portfolio/project3.jpg',
-  project4: 'images/portfolio/project4.jpg',
-  project5: 'images/portfolio/project5.jpg',
-  project6: 'images/portfolio/project6.jpg',
+  project1: 'https://placehold.co/400x250/00abf0/081b29?text=Project+1',
+  project2: 'https://placehold.co/400x250/00abf0/081b29?text=Project+2',
+  project3: 'https://placehold.co/400x250/00abf0/081b29?text=Project+3',
+  project4: 'https://placehold.co/400x250/00abf0/081b29?text=Project+4',
+  project5: 'https://placehold.co/400x250/00abf0/081b29?text=Project+5',
+  project6: 'https://placehold.co/400x250/00abf0/081b29?text=Project+6',
 };
 
 // Testimonials Section
 export const testimonialAvatars = {
-  client1: 'images/testimonials/client1.jpg',
-  client2: 'images/testimonials/client2.jpg',
-  client3: 'images/testimonials/client3.jpg',
+  client1: 'https://placehold.co/100x100/00abf0/081b29?text=C1',
+  client2: 'https://placehold.co/100x100/00abf0/081b29?text=C2',
+  client3: 'https://placehold.co/100x100/00abf0/081b29?text=C3',
 };
