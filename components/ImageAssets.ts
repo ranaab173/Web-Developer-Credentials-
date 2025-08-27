@@ -10,11 +10,11 @@
 export const profilePic = '/images/profilepic.jpg';
 
 // About Section
-export const aboutMeImage = '/images/about-me.jpg';
+export const aboutMeImage = './images/about-me.jpg';
 
 // Portfolio Section
 export const portfolioImages = {
-  project1: '/images/project1.jpg',
+  project1: '../images/about-me.jpg',
   project2: '/images/project2.jpg',
   project3: '/images/project3.jpg',
   project4: '/images/project4.jpg',
