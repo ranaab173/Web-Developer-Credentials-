@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { GoogleGenerativeAI } from '@google/genai';
 
 interface FormData {
   name: string;
@@ -61,6 +62,27 @@ const Contact: React.FC = () => {
     setSubmitStatus(null);
 
     const formspreeEndpoint = 'https://formspree.io/f/myzdzvvn';
+    
+    // Default auto-reply message as a fallback
+    let autoReplyMessage = `Hi ${formData.name},\n\nThanks for reaching out! I've received your message and will get back to you as soon as possible.\n\nBest,\nRana Abubakar`;
+
+    try {
+      // Initialize Gemini
+      const ai = new GoogleGenerativeAI({ apiKey: process.env.API_KEY });
+      const prompt = `You are a friendly and professional assistant for Rana Abubakar, a web developer. A person named "${formData.name}" just submitted a contact form. Write a short, warm, and professional auto-reply email body to "${formData.name}" confirming receipt of their message. Tell them Rana has received their message and will get back to them shortly. Sign off as "Rana Abubakar". Keep the entire message under 60 words. Do not use markdown.`;
+
+      const response = await ai.models.generateContent({
+        model: 'gemini-2.5-flash',
+        contents: prompt,
+      });
+      
+      autoReplyMessage = response.text;
+
+    } catch (geminiError) {
+      console.error("Failed to generate AI auto-reply, using default.", geminiError);
+      // The default message is already set, so we can just continue.
+    }
+
 
     try {
       const response = await fetch(formspreeEndpoint, {
@@ -69,7 +91,12 @@ const Contact: React.FC = () => {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          _replyto: formData.email, // Sends auto-reply to user's email
+          _subject: `New Portfolio Contact from ${formData.name}`, // Subject for my email
+          _autoresponse: autoReplyMessage, // Custom auto-reply content
+        }),
       });
 
       if (response.ok) {
