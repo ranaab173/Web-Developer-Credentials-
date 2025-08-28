@@ -34,7 +34,8 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center bg-[#081b29] overflow-hidden pt-28 md:pt-0">
-       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 md:w-[600px] md:h-[600px] bg-gradient-to-br from-[#00abf0] to-[#0d3d5e] rounded-full blob opacity-30 blur-2xl"></div>
+       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 md:w-[600px] md:h-[600px] bg-gradient-to-br from-[#0e3a5a] to-[#081b29] rounded-full blob opacity-40 blur-2xl"></div>
+       <div className="absolute top-0 right-0 w-80 h-80 bg-[#00abf0] rounded-full opacity-10 blur-3xl -translate-y-1/4 translate-x-1/4 z-0"></div>
        <CodeAnimation />
        {/* Floating Shapes */}
        <div className="absolute inset-0 z-0">
