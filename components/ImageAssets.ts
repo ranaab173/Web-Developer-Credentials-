@@ -1,7 +1,7 @@
 export const ImageAssets = {
   profilePic: 'https://raw.githubusercontent.com/ranaab173/Web-Developer-Credentials-/main/images/profilepic.jpg',
   aboutMe: 'https://raw.githubusercontent.com/ranaab173/Web-Developer-Credentials-/main/images/about-me.jpg',
-  whatsappQR: 'https://raw.githubusercontent.com/ranaab173/Web-Developer-Credentials-/main/images/whatsapp-qr.jpg',
+  whatsappQR: 'https://raw.githubusercontent.com/ranaab173/Web-Developer-Credentials-/main/images/whatsapp-qr.jpeg',
   portfolio: {
     card1: 'https://raw.githubusercontent.com/ranaab173/Web-Developer-Credentials-/main/images/card1.jpg',
     card2: 'https://raw.githubusercontent.com/ranaab173/Web-Developer-Credentials-/main/images/card2.jpg',
