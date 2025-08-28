@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ImageAssets } from './ImageAssets';
 import TechScroller from './TechScroller';
+import Particles from './Particles';
 
 type Tab = 'skills' | 'experience' | 'education';
 
@@ -37,8 +38,9 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-[#0b293e] overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+    <section id="about" className="relative py-20 bg-[#0b293e] overflow-hidden">
+      <Particles />
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
         <div className="md:w-1/3 flex justify-center" data-animate="fade-in-right">
              <div className="bg-[#081b29] rounded-lg shadow-lg shadow-[#00abf0]/20 border border-gray-700 w-full max-w-sm overflow-hidden">
                 <div className="bg-gray-800 p-2 flex items-center gap-2">
