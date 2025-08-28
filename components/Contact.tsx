@@ -16,6 +16,7 @@ const Contact: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitStatus, setSubmitStatus] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const validate = (): FormErrors => {
     const newErrors: FormErrors = {};
@@ -46,22 +47,48 @@ const Contact: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       setSubmitStatus({ message: 'Please fill in all required fields.', type: 'error' });
-    } else {
-      // Simulate successful submission
-      console.log('Form submitted:', formData);
-      setErrors({});
-      setSubmitStatus({ message: 'Your message has been sent successfully!', type: 'success' });
-      setFormData({ name: '', email: '', message: '' }); // Clear form
-      // Hide success message after 5 seconds
-      setTimeout(() => {
-        setSubmitStatus(null);
-      }, 5000);
+      return;
+    }
+
+    setErrors({});
+    setIsLoading(true);
+    setSubmitStatus(null);
+
+    const formspreeEndpoint = 'https://formspree.io/f/myzdzvvn';
+
+    try {
+      const response = await fetch(formspreeEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus({ message: 'Your message has been sent successfully!', type: 'success' });
+        setFormData({ name: '', email: '', message: '' }); // Clear form
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+          setSubmitStatus(null);
+        }, 5000);
+      } else {
+        const responseData = await response.json();
+        const errorMessage = responseData.errors?.map((err: { message: string }) => err.message).join(', ') || 'Form submission failed. Please try again.';
+        throw new Error(errorMessage);
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setSubmitStatus({ message: (error as Error).message || 'Something went wrong. Please try again later.', type: 'error' });
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -152,8 +179,8 @@ const Contact: React.FC = () => {
                 </div>
               )}
               <div>
-                <button type="submit" className="inline-block px-8 py-3 bg-[#00abf0] text-[#081b29] rounded-full font-semibold hover:bg-opacity-80 transition-all duration-300 shadow-[0_0_10px_#00abf0]">
-                  Submit
+                <button type="submit" disabled={isLoading} className="inline-block px-8 py-3 bg-[#00abf0] text-[#081b29] rounded-full font-semibold hover:bg-opacity-80 transition-all duration-300 shadow-[0_0_10px_#00abf0] disabled:opacity-50 disabled:cursor-not-allowed">
+                  {isLoading ? 'Sending...' : 'Submit'}
                 </button>
               </div>
             </form>
