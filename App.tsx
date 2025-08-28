@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 import HireMeModal from './components/HireMeModal';
+import BackToTopButton from './components/BackToTopButton';
 
 const App: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -40,6 +41,7 @@ const App: React.FC = () => {
         </div>
       </main>
       <Footer />
+      <BackToTopButton />
     </div>
   );
 };
