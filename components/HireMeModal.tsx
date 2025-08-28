@@ -44,7 +44,7 @@ const HireMeModal: React.FC<HireMeModalProps> = ({ isOpen, onClose }) => {
                 onClick={handleProceed} 
                 className="inline-block px-8 py-3 bg-[#00abf0] text-[#081b29] rounded-full font-semibold hover:bg-opacity-80 transition-all duration-300 shadow-[0_0_10px_#00abf0]"
             >
-                Proceed to Contact Form
+                Get Discount
             </button>
         </div>
       </div>

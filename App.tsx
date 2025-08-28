@@ -11,7 +11,7 @@ import CustomCursor from './components/CustomCursor';
 import HireMeModal from './components/HireMeModal';
 
 const App: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
