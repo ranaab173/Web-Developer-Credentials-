@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
           <h3 className="text-3xl font-bold" data-animate="fade-in-left" style={{transitionDelay: '100ms'}}>Hello, I'm</h3>
           <h1 className="text-5xl md:text-6xl font-extrabold my-3" data-animate="fade-in-left" style={{transitionDelay: '200ms'}}>Rana Abubakar</h1>
           <h3 className="text-3xl font-bold text-[#00abf0] min-h-[84px] md:min-h-0 flex flex-col justify-center items-center md:items-start" data-animate="fade-in-left" style={{transitionDelay: '300ms'}}>
-            <span>And I'm a</span> <span className="border-r-2 border-[#00abf0] min-h-[48px] inline-block align-middle">{currentRole || '\u00A0'}</span>
+            <span>And I'm a</span> <span className="border-r-2 border-[#00abf0] min-h-[48px] inline-block align-middle">{currentRole || ' '}</span>
           </h3>
           <p className="my-6 text-gray-300 leading-relaxed max-w-xl mx-auto md:mx-0" data-animate="fade-in-left" style={{transitionDelay: '400ms'}}>
             I'm a passionate developer with experience in building web applications with modern technologies. I love solving complex problems and learning new skills.
@@ -62,8 +62,8 @@ const Hero: React.FC = () => {
               <svg fill="currentColor" className="w-5 h-5" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
             </a>
           </div>
-          <a href="https://raw.githubusercontent.com/ranaab173/Web-Developer-Credentials-/main/my-cv.pdf" download className="inline-block px-8 py-3 bg-[#00abf0] text-[#081b29] rounded-full font-semibold hover:bg-opacity-80 transition-all duration-300 shadow-[0_0_10px_#00abf0]" data-animate="fade-in-left" style={{transitionDelay: '600ms'}}>
-            Download CV
+          <a href="#contact" className="inline-block px-8 py-3 bg-[#00abf0] text-[#081b29] rounded-full font-semibold hover:bg-opacity-80 transition-all duration-300 shadow-[0_0_10px_#00abf0]" data-animate="fade-in-left" style={{transitionDelay: '600ms'}}>
+            Contact Me
           </a>
         </div>
         <div className="md:w-1/2 flex justify-center z-10" data-animate="fade-in-right">
