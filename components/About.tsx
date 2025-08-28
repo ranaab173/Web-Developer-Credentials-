@@ -56,13 +56,13 @@ const About: React.FC = () => {
 
           <div className="tab-content min-h-[220px]">
             {activeTab === 'skills' && (
-              <div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {skills.map((skillCat, index) => (
-                  <div key={index} className="mb-4">
-                    <h4 className="text-xl font-semibold text-[#00abf0] mb-2">{skillCat.category}</h4>
+                  <div key={index} className="bg-[#081b29] p-6 rounded-lg shadow-lg border border-gray-700/50">
+                    <h4 className="text-xl font-semibold text-[#00abf0] mb-4">{skillCat.category}</h4>
                     <div className="flex flex-wrap gap-2">
                       {skillCat.items.map(item => (
-                        <span key={item} className="bg-[#081b29] px-3 py-1 rounded-md text-gray-300">{item}</span>
+                        <span key={item} className="bg-[#0b293e] px-3 py-1 rounded-md text-gray-300 text-sm">{item}</span>
                       ))}
                     </div>
                   </div>

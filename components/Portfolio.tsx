@@ -38,7 +38,7 @@ const portfolioItems = [
 
 const PortfolioItem: React.FC<{ item: typeof portfolioItems[0] }> = ({ item }) => {
   return (
-    <div className="flex-shrink-0 w-[350px] mx-4 bg-[#0b293e] rounded-lg overflow-hidden border border-gray-700/50 shadow-lg transform transition-transform duration-300 hover:-translate-y-2">
+    <div className="flex-shrink-0 w-[300px] sm:w-[350px] mx-2 bg-[#0b293e] rounded-lg overflow-hidden border border-gray-700/50 shadow-lg transform transition-transform duration-300 hover:-translate-y-2">
       <img src={item.imgSrc} alt={item.title} className="w-full h-48 object-cover" />
       <div className="p-6">
         <p className="text-sm text-[#00abf0] font-semibold mb-1">{item.category}</p>
@@ -69,8 +69,8 @@ const Portfolio: React.FC = () => {
             <PortfolioItem key={index} item={item} />
           ))}
         </div>
-        <div className="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-[#081b29] to-transparent"></div>
-        <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-[#081b29] to-transparent"></div>
+        <div className="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-[#081b29] to-transparent hidden md:block"></div>
+        <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-[#081b29] to-transparent hidden md:block"></div>
       </div>
     </section>
   );

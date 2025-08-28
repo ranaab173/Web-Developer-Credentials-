@@ -32,14 +32,14 @@ const Hero: React.FC = () => {
   }, [currentRole, isDeleting, roleIndex, typingSpeed]);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-[#081b29] overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center bg-[#081b29] overflow-hidden pt-28 md:pt-0">
        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 md:w-[600px] md:h-[600px] bg-gradient-to-br from-[#00abf0] to-[#0b293e] rounded-full blob opacity-20 blur-2xl"></div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center justify-between z-10">
         <div className="md:w-1/2 mt-10 md:mt-0 text-center md:text-left" data-animate="fade-in-left">
           <h3 className="text-3xl font-bold">Hello, I'm</h3>
           <h1 className="text-5xl md:text-6xl font-extrabold my-3">Rana Abubakar</h1>
           <h3 className="text-3xl font-bold text-[#00abf0]">
-            And I'm a <span className="border-r-2 border-[#00abf0] min-h-[48px] inline-block">{currentRole}</span>
+            And I'm a <span className="border-r-2 border-[#00abf0] min-h-[48px] inline-block align-middle">{currentRole || '\u00A0'}</span>
           </h3>
           <p className="my-6 text-gray-300 leading-relaxed max-w-xl mx-auto md:mx-0">
             I'm a passionate developer with experience in building web applications with modern technologies. I love solving complex problems and learning new skills.
