@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onHireMeClick: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onHireMeClick }) => {
   const [isSticky, setIsSticky] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -39,9 +43,12 @@ const Header: React.FC = () => {
             </a>
           ))}
         </nav>
-        <a href="#contact" className="hidden md:inline-block px-6 py-2 border-2 border-[#00abf0] text-[#00abf0] rounded-full font-semibold hover:bg-[#00abf0] hover:text-[#081b29] transition-all duration-300">
+        <button 
+            onClick={onHireMeClick} 
+            className="hidden md:inline-block px-6 py-2 border-2 border-[#00abf0] text-[#00abf0] rounded-full font-semibold hover:bg-[#00abf0] hover:text-[#081b29] transition-all duration-300"
+        >
           Hire Me
-        </a>
+        </button>
         <button className="md:hidden text-white z-50" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? (
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -62,9 +69,15 @@ const Header: React.FC = () => {
               {link.name}
             </a>
           ))}
-          <a href="#contact" className="mt-4 px-8 py-3 border-2 border-[#00abf0] text-[#00abf0] rounded-full font-semibold hover:bg-[#00abf0] hover:text-[#081b29] transition-all duration-300" onClick={() => setIsMenuOpen(false)}>
+          <button 
+            onClick={() => {
+                setIsMenuOpen(false);
+                onHireMeClick();
+            }} 
+            className="mt-4 px-8 py-3 border-2 border-[#00abf0] text-[#00abf0] rounded-full font-semibold hover:bg-[#00abf0] hover:text-[#081b29] transition-all duration-300"
+          >
             Hire Me
-          </a>
+          </button>
         </div>
       </div>
     </header>

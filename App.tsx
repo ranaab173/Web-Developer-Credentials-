@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -8,12 +8,19 @@ import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
+import HireMeModal from './components/HireMeModal';
 
 const App: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => setIsModalOpen(true);
+  const handleCloseModal = () => setIsModalOpen(false);
+
   return (
     <div className="bg-[#081b29] text-white font-sans overflow-x-hidden">
       <CustomCursor />
-      <Header />
+      <HireMeModal isOpen={isModalOpen} onClose={handleCloseModal} />
+      <Header onHireMeClick={handleOpenModal} />
       <main>
         <Hero />
         <div data-animate="fade-in-up">
