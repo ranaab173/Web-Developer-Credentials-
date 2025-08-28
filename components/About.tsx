@@ -41,7 +41,7 @@ const About: React.FC = () => {
         <div className="md:w-1/3 flex justify-center" data-animate="fade-in-right">
             <img src={ImageAssets.aboutMe} alt="About Me" className="rounded-lg w-full max-w-sm shadow-lg shadow-[#00abf0]/20" />
         </div>
-        <div className="md:w-2/3" data-animate="fade-in-left">
+        <div className="w-full md:w-2/3" data-animate="fade-in-left">
           <h2 className="text-4xl font-bold mb-2 text-center md:text-left">About <span className="text-[#00abf0]">Me</span></h2>
           <h3 className="text-2xl font-semibold mb-4 text-center md:text-left">Full-stack Developer!</h3>
           <p className="text-gray-300 leading-relaxed mb-6">
