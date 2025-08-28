@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GoogleGenerativeAI } from '@google/genai';
+import { GoogleGenAI } from '@google/genai';
 
 interface FormData {
   name: string;
@@ -68,7 +68,7 @@ const Contact: React.FC = () => {
 
     try {
       // Initialize Gemini
-      const ai = new GoogleGenerativeAI({ apiKey: process.env.API_KEY });
+      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       const prompt = `You are a friendly and professional assistant for Rana Abubakar, a web developer. A person named "${formData.name}" just submitted a contact form. Write a short, warm, and professional auto-reply email body to "${formData.name}" confirming receipt of their message. Tell them Rana has received their message and will get back to them shortly. Sign off as "Rana Abubakar". Keep the entire message under 60 words. Do not use markdown.`;
 
       const response = await ai.models.generateContent({
