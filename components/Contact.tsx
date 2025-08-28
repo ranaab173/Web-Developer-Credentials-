@@ -12,7 +12,7 @@ const Contact: React.FC = () => {
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#0b293e] text-[#00abf0]">
-                    <svg xmlns="http://www.w.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg">Email</h4>
@@ -40,17 +40,6 @@ const Contact: React.FC = () => {
             <a href="#" className="inline-block px-8 py-3 bg-[#00abf0] text-[#081b29] rounded-full font-semibold hover:bg-opacity-80 transition-all duration-300 shadow-[0_0_10px_#00abf0]">
                 Download CV
             </a>
-            <div className="mt-12">
-              <div style={{backgroundColor: '#128C7E'}} className="p-1 rounded-lg">
-                <div className="bg-white text-black p-4 rounded-lg text-center">
-                  <img src={ImageAssets.profilePic} alt="Rana Abubakar" className="w-16 h-16 rounded-full mx-auto -mt-10 mb-2 border-4 border-white shadow-md" />
-                  <h3 className="text-lg font-bold">Rana Abubakar</h3>
-                  <p className="text-sm text-gray-500">WhatsApp contact</p>
-                  <img src={ImageAssets.whatsappQR} alt="WhatsApp QR Code" className="w-48 h-48 mx-auto my-3" />
-                  <p className="text-xs text-gray-600 px-4">Scan this code using the WhatsApp camera to get my number</p>
-                </div>
-              </div>
-            </div>
           </div>
           {/* Contact Form */}
           <div className="lg:w-2/3" data-animate="fade-in-left">
