@@ -19,7 +19,7 @@ const CodeAnimation: React.FC = () => {
       const style = {
         left: `${Math.random() * 90}%`,
         animationDuration: `${10 + Math.random() * 10}s`,
-        animationDelay: `${Math.random() * 2}s`,
+        animationDelay: `${Math.random() * 0.5}s`,
         bottom: `-${Math.random() * 20 + 20}vh`,
       };
       return (
