@@ -93,19 +93,16 @@ const Contact: React.FC = () => {
         },
         body: JSON.stringify({
           ...formData,
-          _replyto: formData.email, // Sends auto-reply to user's email
+          _replyto: formData.email, // Sets the reply-to address for my email
           _subject: `New Portfolio Contact from ${formData.name}`, // Subject for my email
-          _autoresponse: autoReplyMessage, // Custom auto-reply content
+          // _autoresponse is a premium Formspree feature, so we display the message on-screen instead.
         }),
       });
 
       if (response.ok) {
-        setSubmitStatus({ message: 'Your message has been sent successfully!', type: 'success' });
+        const successMessage = `✅ Message Sent Successfully!\n\n${autoReplyMessage}`;
+        setSubmitStatus({ message: successMessage, type: 'success' });
         setFormData({ name: '', email: '', message: '' }); // Clear form
-        // Hide success message after 5 seconds
-        setTimeout(() => {
-          setSubmitStatus(null);
-        }, 5000);
       } else {
         const responseData = await response.json();
         const errorMessage = responseData.errors?.map((err: { message: string }) => err.message).join(', ') || 'Form submission failed. Please try again.';
@@ -201,7 +198,7 @@ const Contact: React.FC = () => {
                 {errors.message && <p id="message-error" className="text-red-400 text-sm mt-1">{errors.message}</p>}
               </div>
               {submitStatus && (
-                <div className={`p-3 rounded-lg text-center font-semibold ${submitStatus.type === 'success' ? 'bg-green-500/10 text-green-400' : 'bg-red-500/10 text-red-400'}`}>
+                <div className={`p-4 rounded-lg text-left whitespace-pre-wrap ${submitStatus.type === 'success' ? 'bg-green-500/10 text-green-400 font-medium' : 'bg-red-500/10 text-red-400 font-semibold'}`}>
                   {submitStatus.message}
                 </div>
               )}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ImageAssets } from './ImageAssets';
+import CodeAnimation from './CodeAnimation';
 
 const roles = ["Full Stack Developer", "Software Engineer", "MERN Stack Expert"];
 
@@ -33,9 +34,17 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center bg-[#081b29] overflow-hidden pt-28 md:pt-0">
-       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 md:w-[600px] md:h-[600px] bg-gradient-to-br from-[#00abf0] to-[#0b293e] rounded-full blob opacity-20 blur-2xl"></div>
+       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 md:w-[600px] md:h-[600px] bg-gradient-to-br from-[#00abf0] to-[#0d3d5e] rounded-full blob opacity-30 blur-2xl"></div>
+       <CodeAnimation />
+       {/* Floating Shapes */}
+       <div className="absolute inset-0 z-0">
+          <div className="shape circle" style={{ top: '20%', left: '10%', animationDelay: '0s' }}></div>
+          <div className="shape square" style={{ top: '70%', left: '80%', animationDelay: '2s' }}></div>
+          <div className="shape circle" style={{ top: '80%', left: '20%', animationDelay: '4s', width: '25px', height: '25px' }}></div>
+          <div className="shape square" style={{ top: '30%', left: '75%', animationDelay: '6s', width: '20px', height: '20px' }}></div>
+       </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center justify-between z-10">
-        <div className="md:w-1/2 mt-10 md:mt-0 text-center md:text-left" data-animate="fade-in-left">
+        <div className="md:w-1/2 mt-10 md:mt-0 text-center md:text-left z-10" data-animate="fade-in-left">
           <h3 className="text-3xl font-bold">Hello, I'm</h3>
           <h1 className="text-5xl md:text-6xl font-extrabold my-3">Rana Abubakar</h1>
           <h3 className="text-3xl font-bold text-[#00abf0] min-h-[84px] md:min-h-0 flex flex-col justify-center items-center md:items-start">
@@ -56,7 +65,7 @@ const Hero: React.FC = () => {
             Download CV
           </a>
         </div>
-        <div className="md:w-1/2 flex justify-center" data-animate="fade-in-right">
+        <div className="md:w-1/2 flex justify-center z-10" data-animate="fade-in-right">
           <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-8 border-[#00abf0] shadow-[0_0_20px_#00abf0]">
             <img src={ImageAssets.profilePic} alt="Rana Abubakar" className="w-full h-full object-cover" />
           </div>

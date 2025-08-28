@@ -7,10 +7,12 @@ import Portfolio from './components/Portfolio';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CustomCursor from './components/CustomCursor';
 
 const App: React.FC = () => {
   return (
     <div className="bg-[#081b29] text-white font-sans overflow-x-hidden">
+      <CustomCursor />
       <Header />
       <main>
         <Hero />
