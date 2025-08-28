@@ -44,7 +44,7 @@
       /* --- Portfolio Carousel --- */
       .carousel-track {
         display: flex;
-        animation: scroll 30s linear infinite;
+        animation: scroll 20s linear infinite;
       }
       .portfolio-carousel:hover .carousel-track {
         animation-play-state: paused;
@@ -54,23 +54,25 @@
         100% { transform: translateX(-50%); }
       }
 
+      @keyframes scroll-y {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-50%); }
+      }
+
       /* Mobile Carousel Overrides */
       @media (max-width: 767px) {
+        .portfolio-carousel {
+          height: 550px; /* Fixed height for vertical scroll viewport */
+          overflow: hidden;
+        }
         .carousel-track {
-          animation: none;
-          overflow-x: scroll;
-          scroll-snap-type: x mandatory;
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
+          flex-direction: column;
+          width: 100%;
+          animation: scroll-y 40s linear infinite; /* Vertical animation */
         }
-        .carousel-track::-webkit-scrollbar {
-          display: none; /* Hide scrollbar for Chrome, Safari, Opera */
-        }
-        .carousel-track > div { /* Target PortfolioItem */
-          scroll-snap-align: start;
-        }
+        /* Keep it playing on mobile */
         .portfolio-carousel:hover .carousel-track {
-          animation-play-state: unset;
+          animation-play-state: running;
         }
       }
     </style>

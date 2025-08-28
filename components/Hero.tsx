@@ -38,8 +38,8 @@ const Hero: React.FC = () => {
         <div className="md:w-1/2 mt-10 md:mt-0 text-center md:text-left" data-animate="fade-in-left">
           <h3 className="text-3xl font-bold">Hello, I'm</h3>
           <h1 className="text-5xl md:text-6xl font-extrabold my-3">Rana Abubakar</h1>
-          <h3 className="text-3xl font-bold text-[#00abf0]">
-            And I'm a <span className="border-r-2 border-[#00abf0] min-h-[48px] inline-block align-middle">{currentRole || '\u00A0'}</span>
+          <h3 className="text-3xl font-bold text-[#00abf0] min-h-[84px] md:min-h-0 flex flex-col justify-center items-center md:items-start">
+            <span>And I'm a</span> <span className="border-r-2 border-[#00abf0] min-h-[48px] inline-block align-middle">{currentRole || '\u00A0'}</span>
           </h3>
           <p className="my-6 text-gray-300 leading-relaxed max-w-xl mx-auto md:mx-0">
             I'm a passionate developer with experience in building web applications with modern technologies. I love solving complex problems and learning new skills.

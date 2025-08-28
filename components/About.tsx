@@ -70,18 +70,22 @@ const About: React.FC = () => {
               </div>
             )}
             {activeTab === 'experience' && (
-              <ul className="list-disc list-inside space-y-3">
-                {experience.map((exp, index) => (
-                  <li key={index}><span className="font-bold text-[#00abf0]">{exp.role}</span> at {exp.company} <span className="text-gray-400">({exp.duration})</span></li>
-                ))}
-              </ul>
+              <div className="bg-[#081b29] p-6 rounded-lg shadow-lg border border-gray-700/50">
+                <ul className="list-disc list-inside space-y-3">
+                  {experience.map((exp, index) => (
+                    <li key={index}><span className="font-bold text-[#00abf0]">{exp.role}</span> at {exp.company} <span className="text-gray-400">({exp.duration})</span></li>
+                  ))}
+                </ul>
+              </div>
             )}
             {activeTab === 'education' && (
-              <ul className="list-disc list-inside space-y-3">
-                {education.map((edu, index) => (
-                  <li key={index}><span className="font-bold text-[#00abf0]">{edu.degree}</span> from {edu.institution} <span className="text-gray-400">({edu.duration})</span></li>
-                ))}
-              </ul>
+               <div className="bg-[#081b29] p-6 rounded-lg shadow-lg border border-gray-700/50">
+                <ul className="list-disc list-inside space-y-3">
+                  {education.map((edu, index) => (
+                    <li key={index}><span className="font-bold text-[#00abf0]">{edu.degree}</span> from {edu.institution} <span className="text-gray-400">({edu.duration})</span></li>
+                  ))}
+                </ul>
+              </div>
             )}
           </div>
         </div>
