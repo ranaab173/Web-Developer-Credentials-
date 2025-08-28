@@ -10,21 +10,19 @@
 export const profilePic = './images/profilepic.jpg';
 
 // About Section
-export const aboutMeImage = '/images/about-me.jpg';
+export const aboutMeImage = './images/about-me.jpg';
 
 // Portfolio Section
 export const portfolioImages = {
-  project1: 'images/about-me.jpg',
-  project2: './images/project2.jpg',
-  project3: './images/project3.jpg',
-  project4: './images/project4.jpg',
-  project5: './images/project5.jpg',
-  project6: './images/project6.jpg',
+  card1: './images/card1.jpg',
+  card2: './images/card2.jpg',
+  card3: './images/card3.jpg',
+  card4: './images/card4.jpg',
 };
 
 // Testimonials Section
 export const testimonialAvatars = {
-  client1: './images/client1.jpg',
-  client2: './images/client2.jpg',
-  client3: './images/client3.jpg',
+  janeDoe: './images/jane-doe.jpg',
+  johnSmith: './images/john-smith.jpg',
+  emilyWhite: './images/emily-white.jpg',
 };

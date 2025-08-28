@@ -8,7 +8,7 @@ const portfolioItems = [
     category: 'Web App', 
     description: 'A full-featured e-commerce site with product catalogs, shopping cart, and payment integration.',
     skills: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    imgSrc: portfolioImages.project1
+    imgSrc: portfolioImages.card1
   },
   { 
     id: 2, 
@@ -16,7 +16,7 @@ const portfolioItems = [
     category: 'Mobile App', 
     description: 'A cross-platform mobile app to help teams organize and track their work efficiently.',
     skills: ['React Native', 'Firebase', 'Redux'],
-    imgSrc: portfolioImages.project2
+    imgSrc: portfolioImages.card2
   },
   { 
     id: 3, 
@@ -24,7 +24,7 @@ const portfolioItems = [
     category: 'Web Design',
     description: 'A modern and responsive website for a corporate client, focusing on brand identity.',
     skills: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
-    imgSrc: portfolioImages.project3
+    imgSrc: portfolioImages.card3
   },
   { 
     id: 4, 
@@ -32,23 +32,7 @@ const portfolioItems = [
     category: 'Web App', 
     description: 'A dashboard for visualizing complex datasets with interactive charts and graphs.',
     skills: ['React', 'D3.js', 'Express', 'PostgreSQL'],
-    imgSrc: portfolioImages.project4
-  },
-  { 
-    id: 5, 
-    title: 'Social Media Aggregator', 
-    category: 'API Development',
-    description: 'An API that aggregates content from multiple social media platforms into a single feed.',
-    skills: ['Node.js', 'OAuth', 'REST API', 'Docker'],
-    imgSrc: portfolioImages.project5
-  },
-  { 
-    id: 6, 
-    title: 'Booking System', 
-    category: 'Web App', 
-    description: 'A reservation system for a local business, enabling customers to book appointments online.',
-    skills: ['React', 'Python', 'Django', 'PostgreSQL'],
-    imgSrc: portfolioImages.project6
+    imgSrc: portfolioImages.card4
   },
 ];
 
