@@ -4,19 +4,17 @@ import { GoogleGenAI } from '@google/genai';
 interface FormData {
   name: string;
   email: string;
-  subject: string;
   message: string;
 }
 
 interface FormErrors {
   name?: string;
   email?: string;
-  subject?: string;
   message?: string;
 }
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState<FormData>({ name: '', email: '', subject: '', message: '' });
+  const [formData, setFormData] = useState<FormData>({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitStatus, setSubmitStatus] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -30,9 +28,6 @@ const Contact: React.FC = () => {
       newErrors.email = 'Email is required.';
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = 'Please enter a valid email address.';
-    }
-    if (!formData.subject.trim()) {
-      newErrors.subject = 'Subject is required.';
     }
     if (!formData.message.trim()) {
       newErrors.message = 'Message is required.';
@@ -99,14 +94,14 @@ const Contact: React.FC = () => {
         body: JSON.stringify({
           ...formData,
           _replyto: formData.email, // Sets the reply-to address for my email
-          _subject: `New Portfolio Contact: ${formData.subject}`, // Subject for my email
+          _subject: `New Portfolio Inquiry from ${formData.name}`, // Subject for my email
         }),
       });
 
       if (response.ok) {
         const successMessage = `✅ Message Sent Successfully!\n\n${autoReplyMessage}`;
         setSubmitStatus({ message: successMessage, type: 'success' });
-        setFormData({ name: '', email: '', subject: '', message: '' }); // Clear form
+        setFormData({ name: '', email: '', message: '' }); // Clear form
       } else {
         const responseData = await response.json();
         const errorMessage = responseData.errors?.map((err: { message: string }) => err.message).join(', ') || 'Form submission failed. Please try again.';
@@ -123,10 +118,10 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-20 bg-[#081b29]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center mb-12">Contact <span className="text-[#00abf0]">Me</span></h2>
-        <div className="flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
           {/* Contact Info */}
           <div className="lg:w-1/3" data-animate="fade-in-right">
+            <h3 className="text-3xl font-bold mb-8">Contact <span className="text-[#00abf0]">Me</span></h3>
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#0b293e] text-[#00abf0]">
@@ -161,6 +156,7 @@ const Contact: React.FC = () => {
           </div>
           {/* Contact Form */}
           <div className="lg:w-2/3" data-animate="fade-in-left">
+            <h3 className="text-3xl font-bold mb-8">Get Discount & <span className="text-[#00abf0]">Custom Offers</span></h3>
             <form onSubmit={handleSubmit} className="space-y-6" noValidate>
               <div>
                 <input 
@@ -188,23 +184,10 @@ const Contact: React.FC = () => {
                 />
                 {errors.email && <p id="email-error" className="text-red-400 text-sm mt-1">{errors.email}</p>}
               </div>
-               <div>
-                <input 
-                  type="text" 
-                  name="subject"
-                  placeholder="Enter Your Project Detail and Budget Here"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className={`w-full bg-[#0b293e] border rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#00abf0] transition-colors ${errors.subject ? 'border-red-500' : 'border-gray-600'}`}
-                  aria-invalid={!!errors.subject}
-                  aria-describedby="subject-error"
-                />
-                {errors.subject && <p id="subject-error" className="text-red-400 text-sm mt-1">{errors.subject}</p>}
-              </div>
               <div>
                 <textarea 
                   name="message"
-                  placeholder="Your Message" 
+                  placeholder="Enter Your Project Detail and Budget Here" 
                   rows={6}
                   value={formData.message}
                   onChange={handleChange}
