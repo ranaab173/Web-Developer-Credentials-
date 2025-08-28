@@ -1,7 +1,70 @@
-import React from 'react';
-import { ImageAssets } from './ImageAssets';
+import React, { useState } from 'react';
+
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+interface FormErrors {
+  name?: string;
+  email?: string;
+  message?: string;
+}
 
 const Contact: React.FC = () => {
+  const [formData, setFormData] = useState<FormData>({ name: '', email: '', message: '' });
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [submitStatus, setSubmitStatus] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
+
+  const validate = (): FormErrors => {
+    const newErrors: FormErrors = {};
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required.';
+    }
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required.';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address.';
+    }
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required.';
+    }
+    return newErrors;
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    // Clear error for the field being edited
+    if (errors[name as keyof FormErrors]) {
+      setErrors(prev => ({ ...prev, [name]: undefined }));
+    }
+    // Clear submission status when user starts typing again
+    if (submitStatus) {
+      setSubmitStatus(null);
+    }
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      setSubmitStatus({ message: 'Please fill in all required fields.', type: 'error' });
+    } else {
+      // Simulate successful submission
+      console.log('Form submitted:', formData);
+      setErrors({});
+      setSubmitStatus({ message: 'Your message has been sent successfully!', type: 'success' });
+      setFormData({ name: '', email: '', message: '' }); // Clear form
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+    }
+  };
+
   return (
     <section id="contact" className="py-20 bg-[#081b29]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,16 +106,51 @@ const Contact: React.FC = () => {
           </div>
           {/* Contact Form */}
           <div className="lg:w-2/3" data-animate="fade-in-left">
-            <form action="#" className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6" noValidate>
               <div>
-                <input type="text" placeholder="Your Name" className="w-full bg-[#0b293e] border border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#00abf0]" />
+                <input 
+                  type="text" 
+                  name="name"
+                  placeholder="Your Name" 
+                  value={formData.name}
+                  onChange={handleChange}
+                  className={`w-full bg-[#0b293e] border rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#00abf0] transition-colors ${errors.name ? 'border-red-500' : 'border-gray-600'}`}
+                  aria-invalid={!!errors.name}
+                  aria-describedby="name-error"
+                />
+                {errors.name && <p id="name-error" className="text-red-400 text-sm mt-1">{errors.name}</p>}
               </div>
               <div>
-                <input type="email" placeholder="Your Email" className="w-full bg-[#0b293e] border border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#00abf0]" />
+                <input 
+                  type="email" 
+                  name="email"
+                  placeholder="Your Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className={`w-full bg-[#0b293e] border rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#00abf0] transition-colors ${errors.email ? 'border-red-500' : 'border-gray-600'}`}
+                  aria-invalid={!!errors.email}
+                  aria-describedby="email-error"
+                />
+                {errors.email && <p id="email-error" className="text-red-400 text-sm mt-1">{errors.email}</p>}
               </div>
               <div>
-                <textarea placeholder="Your Message" rows={6} className="w-full bg-[#0b293e] border border-gray-600 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#00abf0]"></textarea>
+                <textarea 
+                  name="message"
+                  placeholder="Your Message" 
+                  rows={6}
+                  value={formData.message}
+                  onChange={handleChange}
+                  className={`w-full bg-[#0b293e] border rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-[#00abf0] transition-colors ${errors.message ? 'border-red-500' : 'border-gray-600'}`}
+                  aria-invalid={!!errors.message}
+                  aria-describedby="message-error"
+                ></textarea>
+                {errors.message && <p id="message-error" className="text-red-400 text-sm mt-1">{errors.message}</p>}
               </div>
+              {submitStatus && (
+                <div className={`p-3 rounded-lg text-center font-semibold ${submitStatus.type === 'success' ? 'bg-green-500/10 text-green-400' : 'bg-red-500/10 text-red-400'}`}>
+                  {submitStatus.message}
+                </div>
+              )}
               <div>
                 <button type="submit" className="inline-block px-8 py-3 bg-[#00abf0] text-[#081b29] rounded-full font-semibold hover:bg-opacity-80 transition-all duration-300 shadow-[0_0_10px_#00abf0]">
                   Submit
