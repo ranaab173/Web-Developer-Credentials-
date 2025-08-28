@@ -1,5 +1,5 @@
 import React from 'react';
-import { portfolioImages } from './ImageAssets';
+import { ImageAssets } from './ImageAssets';
 
 const portfolioItems = [
   { 
@@ -8,7 +8,7 @@ const portfolioItems = [
     category: 'Web App', 
     description: 'A full-featured e-commerce site with product catalogs, shopping cart, and payment integration.',
     skills: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    imgSrc: portfolioImages.card1
+    imgSrc: ImageAssets.portfolio.card1
   },
   { 
     id: 2, 
@@ -16,7 +16,7 @@ const portfolioItems = [
     category: 'Mobile App', 
     description: 'A cross-platform mobile app to help teams organize and track their work efficiently.',
     skills: ['React Native', 'Firebase', 'Redux'],
-    imgSrc: portfolioImages.card2
+    imgSrc: ImageAssets.portfolio.card2
   },
   { 
     id: 3, 
@@ -24,7 +24,7 @@ const portfolioItems = [
     category: 'Web Design',
     description: 'A modern and responsive website for a corporate client, focusing on brand identity.',
     skills: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
-    imgSrc: portfolioImages.card3
+    imgSrc: ImageAssets.portfolio.card3
   },
   { 
     id: 4, 
@@ -32,7 +32,7 @@ const portfolioItems = [
     category: 'Web App', 
     description: 'A dashboard for visualizing complex datasets with interactive charts and graphs.',
     skills: ['React', 'D3.js', 'Express', 'PostgreSQL'],
-    imgSrc: portfolioImages.card4
+    imgSrc: ImageAssets.portfolio.card4
   },
 ];
 

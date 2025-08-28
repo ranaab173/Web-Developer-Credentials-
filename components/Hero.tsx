@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { profilePic } from './ImageAssets';
+import { ImageAssets } from './ImageAssets';
 
 const roles = ["Full Stack Developer", "Software Engineer", "MERN Stack Expert"];
 
@@ -58,7 +58,7 @@ const Hero: React.FC = () => {
         </div>
         <div className="md:w-1/2 flex justify-center" data-animate="fade-in-right">
           <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-8 border-[#00abf0] shadow-[0_0_20px_#00abf0]">
-            <img src={profilePic} alt="Rana Abubakar" className="w-full h-full object-cover" />
+            <img src={ImageAssets.profilePic} alt="Rana Abubakar" className="w-full h-full object-cover" />
           </div>
         </div>
       </div>

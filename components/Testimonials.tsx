@@ -1,5 +1,5 @@
 import React from 'react';
-import { testimonialAvatars } from './ImageAssets';
+import { ImageAssets } from './ImageAssets';
 
 const testimonialsData = [
   {
@@ -7,21 +7,21 @@ const testimonialsData = [
     title: 'CEO, TechCorp',
     quote: 'Working with them was a game-changer for our business. The final product exceeded all our expectations, and the process was incredibly smooth. Highly recommended!',
     rating: 5,
-    imgSrc: testimonialAvatars.janeDoe
+    imgSrc: ImageAssets.testimonials.janeDoe
   },
   {
     name: 'John Smith',
     title: 'Marketing Director, Innovate Ltd.',
     quote: 'An absolute professional. Their attention to detail and creative solutions helped elevate our brand online. The website they built is both beautiful and highly functional.',
     rating: 5,
-    imgSrc: testimonialAvatars.johnSmith
+    imgSrc: ImageAssets.testimonials.johnSmith
   },
   {
     name: 'Emily White',
     title: 'Founder, Creative Solutions',
     quote: 'I was impressed by their technical expertise and ability to understand my vision. They delivered a top-quality application on time and on budget. A pleasure to work with.',
     rating: 5,
-    imgSrc: testimonialAvatars.emilyWhite
+    imgSrc: ImageAssets.testimonials.emilyWhite
   },
 ];
 
