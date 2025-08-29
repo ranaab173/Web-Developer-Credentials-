@@ -1,5 +1,7 @@
 // Use direct raw file links from GitHub to ensure images load correctly.
 export const ImageAssets = {
+  logo: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/logo.svg?raw=true',
+  favicon: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/favicon.ico?raw=true',
   profilePic: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/profile-pic.jpg?raw=true',
   aboutMe: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/about-me.jpg?raw=true',
   portfolio: {

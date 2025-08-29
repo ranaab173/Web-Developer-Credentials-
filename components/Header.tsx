@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { ImageAssets } from './ImageAssets';
 
 interface HeaderProps {
   onHireMeClick: () => void;
@@ -35,7 +36,10 @@ const Header: React.FC<HeaderProps> = ({ onHireMeClick }) => {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isSticky || isMenuOpen ? 'bg-[#0b293e]' : 'bg-transparent'}`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-5">
-        <a href="#home" className="text-2xl font-bold text-white">Abubakar.</a>
+        <a href="#home" className="text-2xl font-bold text-white flex items-center">
+          <img src={ImageAssets.logo} alt="Logo" className="h-8 w-8 mr-2" />
+          <span>Abubakar.</span>
+        </a>
         <nav className="hidden md:flex space-x-8 items-center">
           {navLinks.map((link) => (
             <a key={link.name} href={link.href} className="text-lg text-white hover:text-[#00abf0] transition-colors duration-300">
