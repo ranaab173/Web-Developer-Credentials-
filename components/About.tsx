@@ -3,7 +3,7 @@ import { ImageAssets } from './ImageAssets';
 import TechScroller from './TechScroller';
 import Particles from './Particles';
 
-type Tab = 'skills' | 'experience' | 'education';
+type Tab = 'skills' | 'experience' | 'education' | 'specialized';
 
 const TabButton: React.FC<{ active: boolean; onClick: () => void; children: React.ReactNode }> = ({ active, onClick, children }) => {
   return (
@@ -21,9 +21,24 @@ const About: React.FC = () => {
   const [activeTab, setActiveTab] = useState<Tab>('skills');
 
   const skills = [
-    { category: "Frontend", items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Redux"] },
-    { category: "Backend", items: ["Node.js", "Express", "Python", "Django", "PostgreSQL", "MongoDB"] },
-    { category: "Tools", items: ["Git", "Docker", "Webpack", "Jest", "CI/CD"] }
+    { category: "Core Technologies", items: ["HTML", "CSS", "JavaScript", "PHP"] },
+    { category: "Frameworks & Libraries", items: ["React.js", "Node.js", "Express.js", "Next.js", "TypeScript", "Vite", "Redux"] },
+    { category: "Tools & Platforms", items: ["MongoDB", "Git", "Webpack", "Docker"] }
+  ];
+
+  const specializedSkills = [
+    { 
+        platform: "WordPress",
+        details: "Elementor, Gutenberg, WooCommerce, Yoast SEO, RankMath, UpdraftPlus, Contact Form, Theme Customization, Custom Coding, ACF, All in One SEO, WordFence, and much more. Have 5 years of experience in Elementor."
+    },
+    {
+        platform: "Shopify",
+        details: "Perfect Ecommerce & Dropshipping Solution. I can build any type of Ecommerce store using Shopify."
+    },
+    {
+        platform: "Other Platforms",
+        details: "Wix, SquareSpace, WebFlow."
+    }
   ];
 
   const experience = [
@@ -63,6 +78,7 @@ const About: React.FC = () => {
 
           <div className="flex space-x-6 border-b border-gray-600 mb-6" data-animate="fade-in-up" style={{transitionDelay: '600ms'}}>
             <TabButton active={activeTab === 'skills'} onClick={() => setActiveTab('skills')}>Skills</TabButton>
+            <TabButton active={activeTab === 'specialized'} onClick={() => setActiveTab('specialized')}>Specialized</TabButton>
             <TabButton active={activeTab === 'experience'} onClick={() => setActiveTab('experience')}>Experience</TabButton>
             <TabButton active={activeTab === 'education'} onClick={() => setActiveTab('education')}>Education</TabButton>
           </div>
@@ -80,6 +96,19 @@ const About: React.FC = () => {
                     </div>
                   </div>
                 ))}
+              </div>
+            )}
+            {activeTab === 'specialized' && (
+              <div className="bg-[#081b29] p-6 rounded-lg shadow-lg border border-gray-700/50">
+                <h4 className="text-xl font-semibold text-[#00abf0] mb-4">Specialized Platforms</h4>
+                <ul className="space-y-4">
+                  {specializedSkills.map((skill, index) => (
+                    <li key={index}>
+                        <h5 className="font-bold text-lg text-white">{skill.platform}</h5>
+                        <p className="text-gray-400 pl-4 border-l-2 border-[#00abf0]/50 ml-2 mt-1">{skill.details}</p>
+                    </li>
+                  ))}
+                </ul>
               </div>
             )}
             {activeTab === 'experience' && (

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ImageAssets } from './ImageAssets';
 import CodeAnimation from './CodeAnimation';
 
-const roles = ["Full Stack Developer", "Software Engineer", "MERN Stack Expert"];
+const roles = ["Full Stack Developer", "Web Developer", "E.commerce Expert"];
 
 const Hero: React.FC = () => {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -67,8 +67,35 @@ const Hero: React.FC = () => {
           </a>
         </div>
         <div className="md:w-1/2 flex justify-center z-10" data-animate="fade-in-right">
-          <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-8 border-[#00abf0] shadow-[0_0_20px_#00abf0]">
-            <img src={ImageAssets.profilePic} alt="Rana Abubakar" className="w-full h-full object-cover" />
+          <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
+            <div className="w-full h-full rounded-full overflow-hidden border-8 border-[#00abf0] shadow-[0_0_20px_#00abf0]">
+              <img src={ImageAssets.profilePic} alt="Rana Abubakar" className="w-full h-full object-cover" />
+            </div>
+            
+            {/* Expert Logos */}
+            <div className="absolute inset-0 z-20 pointer-events-none">
+                <div 
+                    className="expert-logo-container" 
+                    style={{ top: '0%', left: '80%', animationDelay: '0s' }}
+                >
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" alt="WordPress" />
+                    <p className="expert-logo-text">WordPress</p>
+                </div>
+                <div 
+                    className="expert-logo-container" 
+                    style={{ top: '65%', left: '-15%', animationDelay: '2s' }}
+                >
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-original.svg" alt="WooCommerce" />
+                    <p className="expert-logo-text">WooCommerce</p>
+                </div>
+                <div 
+                    className="expert-logo-container" 
+                    style={{ top: '75%', left: '75%', animationDelay: '4s' }}
+                >
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/shopify/shopify-original.svg" alt="Shopify" />
+                    <p className="expert-logo-text">Shopify</p>
+                </div>
+            </div>
           </div>
         </div>
       </div>

@@ -1,65 +1,20 @@
-# abubakarwebteck
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
 
-**Description:**  
-Web Developer Credentials
+# Run and deploy your AI Studio app
 
-## Overview
+This contains everything you need to run your app locally.
 
-This repository serves as a portfolio or credential showcase for web development skills. It is designed to highlight proficiency in web technologies, most likely with a focus on modern web stacks given the primary language is TypeScript.
+View your app in AI Studio: https://ai.studio/apps/drive/1EFMe1NR8bD2LVg4FAlQBP8XpMUO7-05O
 
-## Features
+## Run Locally
 
-- Showcases web development projects or credentials.
-- Built with TypeScript for type safety and modern development practices.
-- Publicly accessible and open for contributions or review.
+**Prerequisites:**  Node.js
 
-## Getting Started
 
-### Prerequisites
-
-- Node.js (v14 or later recommended)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/ranaab173/abubakarwebteck.git
-   cd abubakarwebteck
-   ```
-2. Install dependencies:
-   ```sh
-   npm install
-   # or
-   yarn install
-   ```
-
-### Running the Project
-
-Depending on the project setup (e.g., Next.js, React, or another TypeScript-based framework), typical commands might include:
-
-```sh
-npm run dev
-# or
-yarn dev
-```
-
-Visit `http://localhost:3000` (or as specified in the output) to view the application.
-
-## Usage
-
-- Explore the codebase to see examples of web development best practices.
-- Use the repository as a reference for structuring your own TypeScript-based projects.
-- Fork and adapt for your learning or to build upon for your own web credentials.
-
-## Contributing
-
-Contributions are welcome! If you'd like to contribute, please fork the repository and submit a pull request.
-
-## License
-
-No license specified. Please contact the repository owner for usage terms.
-
-## Links
-
-- [GitHub Repository]([https://github.com/ranaab173/abubakarwebteck](https://abubakarwebteck.netlify.app/))
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`
