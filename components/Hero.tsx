@@ -76,24 +76,38 @@ const Hero: React.FC = () => {
             <div className="absolute inset-0 z-20 pointer-events-none">
                 <div 
                     className="expert-logo-container" 
-                    style={{ top: '0%', left: '80%', animationDelay: '0s' }}
+                    style={{ top: '0%', left: '50%', animationDelay: '0s' }}
                 >
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" alt="WordPress" />
                     <p className="expert-logo-text">WordPress</p>
                 </div>
                 <div 
                     className="expert-logo-container" 
-                    style={{ top: '65%', left: '-15%', animationDelay: '2s' }}
+                    style={{ top: '85%', left: '80%', animationDelay: '1s' }}
                 >
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-original.svg" alt="WooCommerce" />
                     <p className="expert-logo-text">WooCommerce</p>
                 </div>
                 <div 
                     className="expert-logo-container" 
-                    style={{ top: '75%', left: '75%', animationDelay: '4s' }}
+                    style={{ top: '85%', left: '20%', animationDelay: '2s' }}
                 >
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/shopify/shopify-original.svg" alt="Shopify" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/shopify/shopify-original.svg" alt="Shopify" />
                     <p className="expert-logo-text">Shopify</p>
+                </div>
+                 <div 
+                    className="expert-logo-container" 
+                    style={{ top: '35%', left: '0%', animationDelay: '3s' }}
+                >
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" />
+                    <p className="expert-logo-text">React</p>
+                </div>
+                 <div 
+                    className="expert-logo-container" 
+                    style={{ top: '35%', left: '100%', animationDelay: '4s' }}
+                >
+                    <img src="https://api.iconify.design/logos/elementor.svg" alt="Elementor" />
+                    <p className="expert-logo-text">Elementor</p>
                 </div>
             </div>
           </div>
