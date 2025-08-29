@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Pricing from './components/Pricing';
 import Portfolio from './components/Portfolio';
+import Certifications from './components/Certifications';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -12,7 +13,7 @@ import HireMeModal from './components/HireMeModal';
 import BackToTopButton from './components/BackToTopButton';
 
 const App: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
@@ -32,6 +33,9 @@ const App: React.FC = () => {
         </div>
         <div data-animate="fade-in-up">
           <Portfolio />
+        </div>
+        <div data-animate="fade-in-up">
+          <Certifications />
         </div>
         <div data-animate="fade-in-up">
           <Testimonials />

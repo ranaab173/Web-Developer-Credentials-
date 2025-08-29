@@ -27,6 +27,7 @@ const Header: React.FC<HeaderProps> = ({ onHireMeClick }) => {
     { name: 'About', href: '#about' },
     { name: 'Pricing', href: '#pricing' },
     { name: 'Portfolio', href: '#portfolio' },
+    { name: 'Certifications', href: '#certifications' },
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact', href: '#contact' },
   ];

@@ -20,8 +20,9 @@ const plans: { [key: string]: Plan } = {
     features: [
       { text: '1–3 Pages (Home, About, Contact)', included: true },
       { text: 'Mobile-friendly, responsive design', included: true },
-      { text: 'Contact form / WhatsApp integration', included: true },
-      { text: 'Social Media Icons', included: true },
+      { text: 'Contact form & Social Media Links', included: true },
+      { text: 'Basic SEO Setup', included: true },
+      { text: 'Speed Optimization', included: true },
       { text: 'Delivery in 3-5 Days', included: true },
       { text: 'E-commerce features', included: false },
     ],
@@ -34,7 +35,9 @@ const plans: { [key: string]: Plan } = {
     features: [
       { text: '4–6 Pages (Home, About, Services, etc.)', included: true },
       { text: 'Customized design with branding', included: true },
-      { text: 'Google Maps, Social links & SEO-ready setup', included: true },
+      { text: 'Google Maps & Analytics Integration', included: true },
+      { text: 'Advanced SEO Setup', included: true },
+      { text: 'Content Upload', included: true },
       { text: 'Delivery in 7–10 days', included: true },
     ],
     buttonText: 'Choose Standard',
@@ -48,7 +51,9 @@ const plans: { [key: string]: Plan } = {
       { text: '7–12 Pages + Product Catalog', included: true },
       { text: 'E-commerce (cart, checkout, payments)', included: true },
       { text: 'Advanced features (booking, gallery)', included: true },
-      { text: 'On-page SEO + 1 month free support', included: true },
+      { text: 'Premium On-page SEO', included: true },
+      { text: 'Social Media Integration', included: true },
+      { text: '1 month free support', included: true },
     ],
     buttonText: 'Go Premium',
   },
@@ -101,6 +106,17 @@ const Pricing: React.FC = () => {
             </article>
           ))}
         </div>
+        
+        <div className="mt-16 text-center bg-[#081b29] p-8 rounded-lg border border-dashed border-[#00abf0]/50" data-animate="fade-in-up">
+            <h3 className="text-2xl font-bold">Supercharge Your Site with an <span className="text-[#00abf0]">SEO Add-on</span></h3>
+            <p className="text-gray-300 mt-3 max-w-3xl mx-auto">
+                Want to rank higher on Google? I offer specialized SEO packages including keyword research, technical SEO, and content strategy. Since every business has unique needs, SEO services are quoted separately.
+            </p>
+            <a href="#contact" className="inline-block mt-6 px-6 py-2 border-2 border-[#00abf0] text-[#00abf0] rounded-full font-semibold hover:bg-[#00abf0] hover:text-[#081b29] transition-all duration-300">
+                Get a Custom SEO Quote
+            </a>
+        </div>
+
       </div>
     </section>
   );

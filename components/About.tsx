@@ -19,8 +19,8 @@ const specializedSkills = [
         details: "The perfect Ecommerce & Dropshipping Solution. I can build any type of high-converting Ecommerce store using Shopify, from initial setup to theme customization and app integration."
     },
     {
-        platform: "Other Platforms",
-        details: "Experienced with other leading platforms including Wix, SquareSpace, and WebFlow to provide versatile web solutions."
+        platform: "Digital Marketing & SEO",
+        details: "Certified SEO expert, offering keyword research, on-page optimization, technical SEO, and content strategies to boost your online visibility and drive organic traffic."
     }
 ];
 

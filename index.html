@@ -307,6 +307,60 @@
         from { opacity: 0; transform: scale(0.9); }
         to { opacity: 1; transform: scale(1); }
       }
+
+      /* --- Certifications Gallery --- */
+      .cert-gallery {
+        display: flex;
+        gap: 1.5rem;
+        padding-bottom: 1.5rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+      }
+      /* Custom Scrollbar */
+      .cert-gallery::-webkit-scrollbar {
+        height: 8px;
+      }
+      .cert-gallery::-webkit-scrollbar-track {
+        background: #081b29;
+        border-radius: 10px;
+      }
+      .cert-gallery::-webkit-scrollbar-thumb {
+        background: #00abf0;
+        border-radius: 10px;
+      }
+      .cert-gallery::-webkit-scrollbar-thumb:hover {
+        background: #008fcc;
+      }
+      .cert-card {
+        flex: 0 0 90%;
+        max-width: 90%;
+        height: 250px; /* Handsome height */
+      }
+      @media (min-width: 640px) {
+        .cert-card {
+          flex: 0 0 350px;
+          max-width: 350px;
+          height: 250px;
+        }
+      }
+      .cert-card-overlay {
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out, background-color 0.4s ease-in-out;
+      }
+      .cert-card:hover .cert-card-overlay {
+        opacity: 1;
+        background-color: rgba(8, 27, 41, 0.95);
+      }
+      .cert-card-content {
+        transform: translateY(20px);
+        opacity: 0;
+        transition: transform 0.4s ease-out 0.1s, opacity 0.4s ease-out 0.1s;
+      }
+      .cert-card:hover .cert-card-content {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
     </style>
   </head>
   <body>
