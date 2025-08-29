@@ -1,15 +1,15 @@
 export const ImageAssets = {
-  profilePic: 'https://raw.githubusercontent.com/ranaab173/abubakarwebteck/main/images/profilepic.jpg',
-  aboutMe: 'https://raw.githubusercontent.com/ranaab173/abubakarwebteck/main/images/about-me.jpg',
+  profilePic: "/images/profile-pic.jpg",
+  aboutMe: "/images/about-me.jpg",
   portfolio: {
-    card1: 'https://raw.githubusercontent.com/ranaab173/abubakarwebteck/main/images/card1.jpg',
-    card2: 'https://raw.githubusercontent.com/ranaab173/abubakarwebteck/main/images/card2.jpg',
-    card3: 'https://raw.githubusercontent.com/ranaab173/abubakarwebteck/main/images/card3.jpg',
-    card4: 'https://raw.githubusercontent.com/ranaab173/abubakarwebteck/main/images/card4.jpg',
+    card1: "/images/portfolio-card1.jpg",
+    card2: "/images/portfolio-card2.jpg",
+    card3: "/images/portfolio-card3.jpg",
+    card4: "/images/portfolio-card4.jpg",
   },
   testimonials: {
-    janeDoe: 'https://raw.githubusercontent.com/ranaab173/abubakarwebteck/main/images/jane-doe.jpg',
-    johnSmith: 'https://raw.githubusercontent.com/ranaab173/abubakarwebteck/main/images/john-smith.jpg',
-    emilyWhite: 'https://raw.githubusercontent.com/ranaab173/abubakarwebteck/main/images/emily-white.jpg',
+    janeDoe: "/images/testimonial-jane.jpg",
+    johnSmith: "/images/testimonial-john.jpg",
+    emilyWhite: "/images/testimonial-emily.jpg",
   },
 };
