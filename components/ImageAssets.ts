@@ -1,21 +1,16 @@
-// NOTE: For these images to load, you must create a public GitHub repository
-// named 'abubakarwebteck-portfolio-assets' under your 'ranaab173' account
-// and upload your image files to the main branch.
-
-const GITHUB_ASSETS_URL = 'https://cdn.jsdelivr.net/gh/ranaab173/abubakarwebteck-portfolio-assets@main/images/';
-
+// Use direct raw file links from GitHub to ensure images load correctly.
 export const ImageAssets = {
-  profilePic: `${GITHUB_ASSETS_URL}profile-pic.jpg`,
-  aboutMe: `${GITHUB_ASSETS_URL}about-me.jpg`,
+  profilePic: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/profile-pic.jpg?raw=true',
+  aboutMe: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/about-me.jpg?raw=true',
   portfolio: {
-    card1: `${GITHUB_ASSETS_URL}portfolio-card1.jpg`,
-    card2: `${GITHUB_ASSETS_URL}portfolio-card2.jpg`,
-    card3: `${GITHUB_ASSETS_URL}portfolio-card3.jpg`,
-    card4: `${GITHUB_ASSETS_URL}portfolio-card4.jpg`,
+    card1: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/portfolio-card1.jpg?raw=true',
+    card2: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/portfolio-card2.jpg?raw=true',
+    card3: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/portfolio-card3.jpg?raw=true',
+    card4: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/portfolio-card4.jpg?raw=true',
   },
   testimonials: {
-    janeDoe: `${GITHUB_ASSETS_URL}testimonial-jane.jpg`,
-    johnSmith: `${GITHUB_ASSETS_URL}testimonial-john.jpg`,
-    emilyWhite: `${GITHUB_ASSETS_URL}testimonial-emily.jpg`,
+    janeDoe: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/testimonial-jane.jpg?raw=true',
+    johnSmith: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/testimonial-john.jpg?raw=true',
+    emilyWhite: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/testimonial-emily.jpg?raw=true',
   },
 };
