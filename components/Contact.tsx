@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { GoogleGenAI } from '@google/genai';
+import StatusPopup from './StatusPopup';
 
 interface FormData {
   name: string;
@@ -53,7 +54,7 @@ const Contact: React.FC = () => {
     const validationErrors = validate();
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
-      setSubmitStatus({ message: 'Please fill in all required fields.', type: 'error' });
+      setSubmitStatus({ message: 'Please fill in all required fields to continue.', type: 'error' });
       return;
     }
 
@@ -99,17 +100,16 @@ const Contact: React.FC = () => {
       });
 
       if (response.ok) {
-        const successMessage = `✅ Message Sent Successfully!\n\n${autoReplyMessage}`;
-        setSubmitStatus({ message: successMessage, type: 'success' });
+        setSubmitStatus({ message: autoReplyMessage, type: 'success' });
         setFormData({ name: '', email: '', message: '' }); // Clear form
       } else {
         const responseData = await response.json();
-        const errorMessage = responseData.errors?.map((err: { message: string }) => err.message).join(', ') || 'Form submission failed. Please try again.';
+        const errorMessage = responseData.errors?.map((err: { message: string }) => err.message).join(', ') || 'Form submission failed. The server responded with an error.';
         throw new Error(errorMessage);
       }
     } catch (error) {
       console.error('Submission error:', error);
-      setSubmitStatus({ message: (error as Error).message || 'Something went wrong. Please try again later.', type: 'error' });
+      setSubmitStatus({ message: (error as Error).message || 'An unexpected error occurred. Please check your network connection and try again.', type: 'error' });
     } finally {
       setIsLoading(false);
     }
@@ -117,6 +117,12 @@ const Contact: React.FC = () => {
 
   return (
     <section id="contact" className="py-20 bg-[#081b29]">
+       <StatusPopup
+        isOpen={!!submitStatus}
+        onClose={() => setSubmitStatus(null)}
+        type={submitStatus?.type || 'error'}
+        message={submitStatus?.message || ''}
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
           {/* Contact Info */}
@@ -194,11 +200,6 @@ const Contact: React.FC = () => {
                 ></textarea>
                 {errors.message && <p id="message-error" className="text-red-400 text-sm mt-1">{errors.message}</p>}
               </div>
-              {submitStatus && (
-                <div className={`p-4 rounded-lg text-left whitespace-pre-wrap ${submitStatus.type === 'success' ? 'bg-green-500/10 text-green-400 font-medium' : 'bg-red-500/10 text-red-400 font-semibold'}`}>
-                  {submitStatus.message}
-                </div>
-              )}
               <div>
                 <button type="submit" disabled={isLoading} className="inline-block px-8 py-3 bg-[#00abf0] text-[#081b29] rounded-full font-semibold hover:bg-opacity-80 transition-all duration-300 shadow-[0_0_10px_#00abf0] disabled:opacity-50 disabled:cursor-not-allowed">
                   {isLoading ? 'Sending...' : 'Submit'}
