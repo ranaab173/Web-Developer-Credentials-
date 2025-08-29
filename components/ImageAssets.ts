@@ -11,11 +11,11 @@ export const ImageAssets = {
     card4: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/portfolio-card4.jpg?raw=true',
   },
   certifications: {
-    wordpress: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/worpress.jpg?raw=true',
+    wordpress: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/wordpress.jpg?raw=true',
     digitalMarketing: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/digital-marketing.jpg?raw=true',
     seo: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/seo.jpg?raw=true',
     freelancing: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/freelancing.jpg?raw=true',
-    fullStackDM: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/fll-stack-dm.jpg?raw=true',
+    fullStackDM: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/full-stack-dm.jpg?raw=true',
   },
   testimonials: {
     janeDoe: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/testimonial-jane.jpg?raw=true',
