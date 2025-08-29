@@ -35,34 +35,33 @@ const certsData = [
 ];
 
 const Certifications: React.FC = () => {
-  const duplicatedCerts = [...certsData, ...certsData];
-
   return (
     <section id="certifications" className="py-20 bg-[#0b293e] overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center mb-4">My <span className="text-[#00abf0]">Certifications</span></h2>
-        <p className="text-center text-lg text-gray-300 mb-12">Proof of My Expertise</p>
-      </div>
-      <div className="cert-gallery-container relative">
-        <div className="cert-gallery-track">
-          {duplicatedCerts.map((cert, index) => (
+        <h2 className="text-4xl font-bold text-center mb-4" data-animate="fade-in-up">My <span className="text-[#00abf0]">Certifications</span></h2>
+        <p className="text-center text-lg text-gray-300 mb-12" data-animate="fade-in-up" style={{ transitionDelay: '100ms' }}>Proof of My Expertise</p>
+        
+        <div className="cert-gallery grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+          {certsData.map((cert, index) => (
             <div 
               key={index} 
-              className="cert-card relative rounded-lg overflow-hidden border border-gray-700/50 shadow-lg bg-cover bg-center"
-              style={{ backgroundImage: `url(${cert.imgSrc})` }}
+              className="cert-card-wrapper" 
+              data-animate="fade-in-up" 
+              style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <div className="cert-card-overlay absolute inset-0 flex items-center justify-center p-6 text-center">
-                <div className="cert-card-content">
-                  <h3 className="text-xl font-bold text-[#00abf0] mb-2">{cert.name}</h3>
-                  <p className="text-sm font-semibold text-white mb-3">{cert.institution}</p>
-                  <p className="text-gray-300 text-sm">{cert.description}</p>
+              <div className="cert-card-new">
+                <img src={cert.imgSrc} alt={`${cert.name} Certificate`} />
+                <div className="cert-card-overlay-new text-left">
+                  <div>
+                    <h3 className="text-xl font-bold text-[#00abf0] mb-1">{cert.name}</h3>
+                    <p className="text-xs font-semibold text-white mb-2">{cert.institution}</p>
+                    <p className="text-gray-300 text-sm leading-snug">{cert.description}</p>
+                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <div className="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-[#0b293e] to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-[#0b293e] to-transparent z-10 pointer-events-none"></div>
       </div>
     </section>
   );
