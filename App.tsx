@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -17,6 +17,11 @@ const App: React.FC = () => {
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
+
+  useEffect(() => {
+    // Open the modal on initial application load
+    handleOpenModal();
+  }, []); // Empty dependency array ensures this runs only once on mount
 
   return (
     <div className="bg-[#081b29] text-white font-sans overflow-x-hidden">
