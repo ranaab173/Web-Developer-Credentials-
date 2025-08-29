@@ -2,7 +2,7 @@
 // named 'abubakarwebteck-portfolio-assets' under your 'ranaab173' account
 // and upload your image files to the main branch.
 
-const GITHUB_ASSETS_URL = 'https://raw.githubusercontent.com/ranaab173/abubakarwebteck-portfolio-assets/main/';
+const GITHUB_ASSETS_URL = 'https://cdn.jsdelivr.net/gh/ranaab173/abubakarwebteck-portfolio-assets@main/images/';
 
 export const ImageAssets = {
   profilePic: `${GITHUB_ASSETS_URL}profile-pic.jpg`,
