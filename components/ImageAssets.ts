@@ -16,6 +16,7 @@ export const ImageAssets = {
     seo: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/seo.jpg?raw=true',
     freelancing: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/freelancing.jpg?raw=true',
     fullStackDM: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/full-stack-dm.jpg?raw=true',
+    fullStack: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/full-stack.jpg?raw=true',
   },
   testimonials: {
     janeDoe: 'https://github.com/ranaab173/abubakarwebteck-portfolio-assets/blob/main/images/testimonial-jane.jpg?raw=true',

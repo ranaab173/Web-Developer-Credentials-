@@ -10,13 +10,13 @@ const certsData = [
   },
   {
     name: 'Digital Marketing',
-    institution: 'Ministery of Information Technology and Telecom, Government of Pakistan',
+    institution: 'Wardiere Institute of Computer Science and Technology',
     description: 'Comprehensive skills in online marketing strategies, including social media and content marketing.',
     imgSrc: ImageAssets.certifications.digitalMarketing
   },
   {
     name: 'Search Engine Optimization',
-    institution: 'Ministery of Information Technology and Telecom, Government of Pakistan',
+    institution: 'Digital Growth Institute',
     description: 'Expertise in on-page, off-page, and technical SEO to improve search engine rankings.',
     imgSrc: ImageAssets.certifications.seo
   },
@@ -31,6 +31,12 @@ const certsData = [
     institution: 'Online Certification Program',
     description: 'A holistic certification covering all aspects of digital marketing from strategy to execution.',
     imgSrc: ImageAssets.certifications.fullStackDM
+  },
+  {
+    name: 'Full-Stack Web Development',
+    institution: 'Progress Institue Digital Skills',
+    description: 'Comprehensive training in front-end and back-end technologies for building complete web applications.',
+    imgSrc: ImageAssets.certifications.fullStack
   }
 ];
 
