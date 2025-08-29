@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ImageAssets } from './ImageAssets';
 import CodeAnimation from './CodeAnimation';
 
-const roles = ["Full Stack Developer", "WordPress | Shopify Developer", "E.commerce Expert"];
+const roles = ["Web Developer", "React Developer", "E.commerce Expert"];
 
 const Hero: React.FC = () => {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -47,9 +47,12 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse md:flex-row items-center justify-between z-10">
         <div className="md:w-1/2 mt-10 md:mt-0 text-center md:text-left z-10">
           <h3 className="text-3xl font-bold" data-animate="fade-in-left" style={{transitionDelay: '100ms'}}>Hello, I'm</h3>
-          <h1 className="text-5xl md:text-6xl font-extrabold my-3" data-animate="fade-in-left" style={{transitionDelay: '200ms'}}>Rana Abubakar</h1>
-          <h3 className="text-3xl font-bold text-[#00abf0] min-h-[84px] md:min-h-0 flex flex-col justify-center items-center md:items-start" data-animate="fade-in-left" style={{transitionDelay: '300ms'}}>
-            <span>And I'm a</span> <span className="border-r-2 border-[#00abf0] min-h-[48px] inline-block align-middle">{currentRole || ' '}</span>
+          <h1 className="text-5xl md:text-6xl font-extrabold my-2" data-animate="fade-in-left" style={{transitionDelay: '200ms'}}>Rana Abubakar</h1>
+          <p className="text-xl font-semibold text-gray-300 my-3" data-animate="fade-in-left" style={{transitionDelay: '250ms'}}>
+            WordPress | Shopify Expert
+          </p>
+          <h3 className="text-3xl font-bold text-[#00abf0] min-h-[84px] md:min-h-[48px] flex flex-col justify-center items-center md:items-start" data-animate="fade-in-left" style={{transitionDelay: '300ms'}}>
+            <span className="border-r-2 border-[#00abf0] min-h-[48px] inline-block align-middle">{currentRole || ' '}</span>
           </h3>
           <p className="my-6 text-gray-300 leading-relaxed max-w-xl mx-auto md:mx-0" data-animate="fade-in-left" style={{transitionDelay: '400ms'}}>
             I'm a passionate developer with experience in building web applications with modern technologies. I love solving complex problems and learning new skills.
@@ -92,7 +95,7 @@ const Hero: React.FC = () => {
                     className="expert-logo-container" 
                     style={{ top: '85%', left: '20%', animationDelay: '2s' }}
                 >
-                    <img src="https://www.svgrepo.com/show/475653/shopify-color.svg" alt="Shopify" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/shopify/shopify-original.svg" alt="Shopify" />
                     <p className="expert-logo-text">Shopify</p>
                 </div>
                  <div 
@@ -106,7 +109,7 @@ const Hero: React.FC = () => {
                     className="expert-logo-container" 
                     style={{ top: '35%', left: '100%', animationDelay: '4s' }}
                 >
-                    <img src="https://www.svgrepo.com/show/353686/elementor.svg" alt="Elementor" />
+                    <img src="https://www.svgrepo.com/show/373539/elementor.svg" alt="Elementor" />
                     <p className="expert-logo-text">Elementor</p>
                 </div>
             </div>

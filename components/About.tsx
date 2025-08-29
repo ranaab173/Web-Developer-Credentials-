@@ -41,8 +41,7 @@ const About: React.FC = () => {
                 </div>
             </div>
             <div className="w-full md:w-2/3">
-              <h2 className="text-4xl font-bold mb-2 text-center md:text-left" data-animate="fade-in-left">About <span className="text-[#00abf0]">Me</span></h2>
-              <h3 className="text-2xl font-semibold mb-4 text-center md:text-left" data-animate="fade-in-left" style={{transitionDelay: '150ms'}}>Full-stack Developer!</h3>
+              <h2 className="text-4xl font-bold mb-4 text-center md:text-left" data-animate="fade-in-left">Full-Stack <span className="text-[#00abf0]">React Developer</span></h2>
               <p className="text-gray-300 leading-relaxed mb-4" data-animate="fade-in-right" style={{transitionDelay: '300ms'}}>
                 I am a results-driven Full Stack Developer specializing in creating efficient, scalable, and user-friendly web applications. With a strong foundation in technologies like React, Node.js, and Next.js, I excel at turning complex ideas into reality. My passion lies in building seamless digital experiences from concept to deployment.
               </p>
