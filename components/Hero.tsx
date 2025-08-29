@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ImageAssets } from './ImageAssets';
 import CodeAnimation from './CodeAnimation';
 
-const roles = ["Full Stack Developer", "Web Developer", "E.commerce Expert"];
+const roles = ["Full Stack Developer", "WordPress | Shopify Developer", "E.commerce Expert"];
 
 const Hero: React.FC = () => {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -92,7 +92,7 @@ const Hero: React.FC = () => {
                     className="expert-logo-container" 
                     style={{ top: '85%', left: '20%', animationDelay: '2s' }}
                 >
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/shopify/shopify-original.svg" alt="Shopify" />
+                    <img src="https://www.svgrepo.com/show/475653/shopify-color.svg" alt="Shopify" />
                     <p className="expert-logo-text">Shopify</p>
                 </div>
                  <div 
@@ -106,7 +106,7 @@ const Hero: React.FC = () => {
                     className="expert-logo-container" 
                     style={{ top: '35%', left: '100%', animationDelay: '4s' }}
                 >
-                    <img src="https://api.iconify.design/logos/elementor.svg" alt="Elementor" />
+                    <img src="https://www.svgrepo.com/show/353686/elementor.svg" alt="Elementor" />
                     <p className="expert-logo-text">Elementor</p>
                 </div>
             </div>
