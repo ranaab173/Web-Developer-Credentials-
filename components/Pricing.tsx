@@ -21,6 +21,8 @@ const plans: { [key: string]: Plan } = {
       { text: '1–3 Pages (Home, About, Contact)', included: true },
       { text: 'Mobile-friendly, responsive design', included: true },
       { text: 'Contact form / WhatsApp integration', included: true },
+      { text: 'Social Media Icons', included: true },
+      { text: 'Delivery in 3-5 Days', included: true },
       { text: 'E-commerce features', included: false },
     ],
     buttonText: 'Get Started',
@@ -30,7 +32,7 @@ const plans: { [key: string]: Plan } = {
     desc: 'A richer site with more pages and better customization.',
     prices: { PKR: 35000, USD: 125 },
     features: [
-      { text: '4–6 Pages (Home, About, Services, Blog, etc.)', included: true },
+      { text: '4–6 Pages (Home, About, Services, etc.)', included: true },
       { text: 'Customized design with branding', included: true },
       { text: 'Google Maps, Social links & SEO-ready setup', included: true },
       { text: 'Delivery in 7–10 days', included: true },
@@ -49,18 +51,6 @@ const plans: { [key: string]: Plan } = {
       { text: 'On-page SEO + 1 month free support', included: true },
     ],
     buttonText: 'Go Premium',
-  },
-  enterprise: {
-    title: 'Enterprise E-commerce',
-    desc: 'Fully functional, scalable e-commerce solution.',
-    prices: { PKR: 150000, USD: 535 },
-    features: [
-      { text: 'Unlimited Pages & Products', included: true },
-      { text: 'Custom Theme & Plugin Development', included: true },
-      { text: 'Advanced Inventory & Order Management', included: true },
-      { text: 'Dedicated support & maintenance', included: true },
-    ],
-    buttonText: 'Contact Us',
   },
 };
 
@@ -83,7 +73,7 @@ const Pricing: React.FC = () => {
           </div>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {Object.values(plans).map((plan, index) => (
             <article key={index} className="relative bg-[#081b29] p-8 rounded-lg border-2 border-transparent hover:border-[#00abf0] transition-all duration-300 flex flex-col transform hover:-translate-y-2 shadow-lg shadow-[#000000]/30" data-animate="fade-in-up">
               {plan.popular && <span className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-[#00abf0] text-[#081b29] px-4 py-1 text-sm font-bold rounded-full">Most Popular</span>}
