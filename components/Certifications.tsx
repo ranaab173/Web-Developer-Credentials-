@@ -35,18 +35,21 @@ const certsData = [
 ];
 
 const Certifications: React.FC = () => {
+  const duplicatedCerts = [...certsData, ...certsData];
+
   return (
     <section id="certifications" className="py-20 bg-[#0b293e] overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center mb-4">My <span className="text-[#00abf0]">Certifications</span></h2>
         <p className="text-center text-lg text-gray-300 mb-12">Proof of My Expertise</p>
-        <div className="cert-gallery">
-          {certsData.map((cert, index) => (
+      </div>
+      <div className="cert-gallery-container relative">
+        <div className="cert-gallery-track">
+          {duplicatedCerts.map((cert, index) => (
             <div 
               key={index} 
               className="cert-card relative rounded-lg overflow-hidden border border-gray-700/50 shadow-lg bg-cover bg-center"
-              style={{ transitionDelay: `${100 * index}ms`, backgroundImage: `url(${cert.imgSrc})` }}
-              data-animate="fade-in-up"
+              style={{ backgroundImage: `url(${cert.imgSrc})` }}
             >
               <div className="cert-card-overlay absolute inset-0 flex items-center justify-center p-6 text-center">
                 <div className="cert-card-content">
@@ -58,6 +61,8 @@ const Certifications: React.FC = () => {
             </div>
           ))}
         </div>
+        <div className="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-[#0b293e] to-transparent z-10 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-[#0b293e] to-transparent z-10 pointer-events-none"></div>
       </div>
     </section>
   );

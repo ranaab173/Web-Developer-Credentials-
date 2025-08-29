@@ -308,39 +308,28 @@
         to { opacity: 1; transform: scale(1); }
       }
 
-      /* --- Certifications Gallery --- */
-      .cert-gallery {
+      /* --- Certifications Carousel --- */
+      .cert-gallery-container {
+        overflow: hidden;
+      }
+      .cert-gallery-track {
         display: flex;
-        gap: 1.5rem;
-        padding-bottom: 1.5rem;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+        animation: scroll 40s linear infinite;
       }
-      /* Custom Scrollbar */
-      .cert-gallery::-webkit-scrollbar {
-        height: 8px;
-      }
-      .cert-gallery::-webkit-scrollbar-track {
-        background: #081b29;
-        border-radius: 10px;
-      }
-      .cert-gallery::-webkit-scrollbar-thumb {
-        background: #00abf0;
-        border-radius: 10px;
-      }
-      .cert-gallery::-webkit-scrollbar-thumb:hover {
-        background: #008fcc;
+      .cert-gallery-container:hover .cert-gallery-track {
+        animation-play-state: paused;
       }
       .cert-card {
-        flex: 0 0 90%;
-        max-width: 90%;
-        height: 250px; /* Handsome height */
+        flex-shrink: 0;
+        width: 450px;
+        height: 300px;
+        margin: 0 1rem;
       }
-      @media (min-width: 640px) {
+       @media (max-width: 640px) {
         .cert-card {
-          flex: 0 0 350px;
+          width: 90vw;
           max-width: 350px;
-          height: 250px;
+          height: 220px;
         }
       }
       .cert-card-overlay {
